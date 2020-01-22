@@ -30,7 +30,7 @@
     "postcss-cssnext": "^2.11.0"
   },
   "dependencies": {
-    "jquery": "^2.2.4",
+    "jquery": "^3.4.1",
     "@avvio-reply/clickortouch": "^1.0.0",
     "acorn": "^6.2.1",
     "acorn-dynamic-import": "^4.0.0",
