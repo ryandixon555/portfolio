@@ -1,17 +1,18 @@
 module.exports = exports = [
 	{
-		id: 118,
+		id: 11,
 		client: "Avvio",
-		name: "Avvio Wordsearch",
+		name: "Wordsearch Game",
 		description: "A wordsearch game",
-		tags: ["Wordsearch", "Game", "Avvio", "Avvio Reply"],
+		tags: ["Wordsearch", "Game", "Avvio", "Avvio Reply", "Handlebars", "Popups"],
 		notes: [],
-		contentFolder: "Avvio Wordsearch",
-		noImages: 4,
-		link: ""
+		contentFolder: "avvio wordsearch",
+		noImages: 3,
+		playableLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html",
+		githubLink: "https://github.com/ryandixon555/avvio-wordsearch/tree/master"
 	},
 	{
-		id: 116,
+		id: 10,
 		client: "Avvio",
 		name: "Christmas Movie Challenge",
 		description: "A quiz game where you have to guess the movies title by the image.",
@@ -19,10 +20,11 @@ module.exports = exports = [
 		notes: [],
 		contentFolder: "Avvio Movie Challenge",
 		noImages: 3,
-		link: ""
+		playableLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html",
+		githubLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html"
 	},
 	{
-		id: 110,
+		id: 9,
 		client: "Avvio",
 		name: "Avvio Digital Puzzle",
 		description: "A 9-square puzzle against the clock. Match the pattern on the side to be in for a chance to win a prize.",
@@ -30,10 +32,11 @@ module.exports = exports = [
 		notes: [],
 		contentFolder: "Avvio Digital Puzzle",
 		noImages: 3,
-		link: ""
+		playableLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html",
+		githubLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html"
 	},
 	{
-		id: 107,
+		id: 8,
 		client: "Avvio",
 		name: "Superhero Name Generator",
 		description: "A very simple superhero name generator.",
@@ -41,10 +44,11 @@ module.exports = exports = [
 		notes: [],
 		contentFolder: "Avvio Superhero Name Generator",
 		noImages: 5,
-		link: ""
+		playableLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html",
+		githubLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html"
 	},
 	{
-		id: 102,
+		id: 7,
 		client: "Avvio",
 		name: "Wheel of Fortune",
 		description: "A Wheel of Fortune that employees to earn points. They had 3 spins to earn as many points as possible to win prizes.",
@@ -52,10 +56,11 @@ module.exports = exports = [
 		notes: [],
 		contentFolder: "Avvio Wheel of Fortune",
 		noImages: 5,
-		link: ""
+		playableLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html",
+		githubLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html"
 	},
 	{
-		id: 98,
+		id: 6,
 		client: "Avvio",
 		name: "Drag And Drop Game",
 		description: "A drag and drop game – match the ‘perfect partnership’ pairs.",
@@ -63,10 +68,11 @@ module.exports = exports = [
 		notes: [],
 		contentFolder: "avvio drag and drop game",
 		noImages: 4,
-		link: ""
+		playableLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html",
+		githubLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html"
 	},
 	{
-		id: 96,
+		id: 4,
 		client: "Avvio",
 		name: "Wher'es Wally",
 		description: "A ‘Where’s Wally’ style game – find and click on the 15 hidden Easter eggs in the illustration to reveal some of the benefits they have at Sky.",
@@ -74,39 +80,43 @@ module.exports = exports = [
 		notes: [],
 		contentFolder: "avvio wheres wally",
 		noImages: 3,
-		link: ""
+		playableLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html",
+		githubLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html"
 	},
 	{
-		id: 80,
+		id: 3,
 		client: "Avvio",
 		name: "Avvio Claw",
-		description: "During ‘Innovation Month’ – 1 of 3 weekly games. A timed reaction speed game – the digital grabber moves left to right, when it looks aligned with one of the ‘new Sky idea’ icons you need to click the GRAB button to collect it.",
+		description: "A timed reaction speed game – the digital grabber moves left to right, when it looks aligned with one of the icons you need to click the GRAB button to collect it.",
 		tags: ["Claw grabber", "Innovation Month", "Timed", "Game", "Avvio", "Avvio Reply",],
 		notes: [],
 		contentFolder: "avvio claw",
 		noImages: 5,
-		link: ""
+		playableLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html",
+		githubLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html"
 	},
 	{
-		id: 79,
+		id: 2,
 		client: "Avvio",
 		name: "Space Raiders",
-		description: "During ‘Innovation Month’ – 1 of 3 weekly games. A timed reaction speed game – the graphic at the bottom moves from left to right, when it looks aligned with one of the barrier rows you need to click the button to ZAP them. The aim is to zap all the barriers and release the 6 innovation icons at the top.",
+		description: "A timed reaction speed game – the graphic at the bottom moves from left to right, when it looks aligned with one of the barrier rows you need to click the button to ZAP them. The aim is to zap all the barriers and release the 6 icons at the top.",
 		tags: ["Space Invaders", "Innovation Month", "Timed", "Game", "Avvio", "Avvio Reply",],
 		notes: [],
 		contentFolder: "avvio space raiders",
 		noImages: 6,
-		link: ""
+		playableLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html",
+		githubLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html"
 	},
 	{
-		id: 78,
+		id: 1,
 		client: "Avvio",
 		name: "Snake",
-		description: "During ‘Innovation Month’ – 1 of 3 weekly games. A snake style game where you use the arrows to move the ‘snake’ around the board and catch the innovation icons that pop up. These icons related to various new Sky and Comcast collaborations.",
+		description: "A snake style game where you use the arrows to move the ‘snake’ around the board and catch the icons that pop up.",
 		tags: ["Snake", "Innovation Month", "Game", "Avvio", "Avvio Reply",],
 		notes: [],
 		contentFolder: "avvio snake",
 		noImages: 5,
-		link: ""
+		playableLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html",
+		githubLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html"
 	}
 ];

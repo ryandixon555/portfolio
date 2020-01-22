@@ -1,4 +1,3 @@
-
 var $ = require('jquery'),
     Projects = require('./projects.js'),
     Handlebars = require('handlebars'),
@@ -108,7 +107,8 @@ $(document).ready(function() {
             "description":project.description,
             "notes":project.notes,
             "tags":project.tags,
-            "link":project.link
+            "playableLink":project.playableLink,
+            "githubLink":project.githubLink
         }
 
         $('body')
