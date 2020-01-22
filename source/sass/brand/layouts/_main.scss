@@ -1,0 +1,24 @@
+// =============================================================================
+// BRAND | Main
+// =============================================================================
+// The default main element styling for the site
+// -----------------------------------------------------------------------------
+
+.main {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	width: 100%;
+
+	@include browser-specific(ie) {
+		flex-shrink: 0;
+	}
+}
+
+.main__section {
+	width: 100%;
+}
+
+.main__inner {
+	@include page-container;
+}

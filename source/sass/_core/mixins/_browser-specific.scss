@@ -1,0 +1,59 @@
+// =============================================================================
+// CORE | MIXINS | BROWSER-SPECIFIC
+// =============================================================================
+//
+//  Label       IE/Edge   Chrome  Firefox   Safari   Opera   Android   iOS
+//  ie          >=10      -       -         -        -       -         -
+//  ie<=7       <=7       -       -         -        -       -         -
+//  ie8         8         -       -         -        -       -         -
+//  ie<=8       <=8       -       -         -        -       -         -
+//  firefox     -         -       >=3.6     -        -       -         -
+//  android     >=9       -       -         4        -       >=2.3     -
+//  chrome      -         >=29    -         -        >=16    -         -
+//  opera       -         >=29    -         -        >=16    -         -
+//  safari      -         22-28   -         >=7      -       -         -
+//              -         -       -         -        -       -         -
+//
+// Browser specific queries
+// =============================================================================
+@mixin browser-specific($browser) {
+	@if ($browser == 'ie') {
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			@content;
+		}
+	} @else if ($browser == 'ie<=7') {
+		@media screen\9 {
+			@content;
+		}
+	} @else if ($browser == 'ie8') {
+		@media \0screen {
+			@content;
+		}
+	} @else if ($browser == 'ie<=8') {
+		@media \0screen\,screen\9 {
+			@content;
+		}
+	} @else if ($browser == 'firefox') {
+		@media screen and (-moz-images-in-menus:0) {
+			@content;
+		}
+	} @else if ($browser == 'opera') {
+		@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) { 
+            @content;
+        }
+	} @else if ($browser == 'safari') {
+		@media #{\\0 screen} {
+            @content;
+        }
+	} @else if ($browser == 'chrome') {
+		@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) { 
+			@content;
+		}
+	} @else if ($browser == 'android') {
+		@media screen and (min-width:0\0) {
+			@content;
+		}
+	} @else {
+		@content
+	}
+}

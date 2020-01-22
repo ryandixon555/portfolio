@@ -1,0 +1,161 @@
+// =============================================================================
+// CUSTOM | Project Detail
+// =============================================================================
+// The detailed project description popup viewed when a project is clicked
+// -----------------------------------------------------------------------------
+
+.project-detail {
+	position: absolute;
+	top: 0;
+	min-height: 800px;
+	width: 100%;
+	max-width: vars(max-width);
+	margin: 40px 0 40px;
+	padding: 80px 40px;
+	background-color: #fff;
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
+}
+
+.project-detail__close {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.project-detail__overview {
+	max-width: 600px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.project-detail__overview h1 {
+	@include type(subheader);
+	@include type(extra-bold);
+	color: color(text, title);
+	text-transform: uppercase;
+}
+
+.project-detail__overview a {
+	display: inline-block;
+	margin-top: 20px;
+	padding: 10px 25px;
+	border: 2px solid color(brand);
+	@include type(bold);
+	color: color(brand);
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.project-detail__images {
+	margin-top: 40px;
+}
+
+.project-detail__images img {
+	max-width: 100%;
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
+}
+
+.project-images__dots {
+	display: flex!important;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.project-images__dots button {
+	height: 10px;
+	width: 10px;
+	margin: 5px;
+	padding: 0;
+	border: 1px solid color(brand);
+	font-size: 0;
+	line-height: 0;
+	border-radius: 50%;
+	background-color: color(secondary);
+	outline: none;
+	cursor: pointer;
+}
+
+.slick-active button {
+	background-color: color(brand);
+}
+
+.slick-arrow {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	font-size: 32px;
+	top: calc(50% - 32px);
+	color: color(brand);
+	z-index: 10;
+	cursor: pointer;
+}
+
+.slick-prev {
+	left: 20px;
+}
+
+.slick-next {
+	right: 20px;
+}
+
+.project-detail__info-container {
+	display: flex;
+	flex-direction: column;
+	margin-top: 40px;
+
+	@include breakpoint-over(md) {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+}
+
+.project-detail__info-column:first-child {
+	width: 70%;
+	margin-top: 0;
+	margin-right: 60px;
+}
+
+.project-detail__info-column:last-child {
+	width: 30%;
+}
+
+.project-detail__info-column h2 {
+	@include type(lead);
+	@include type(extra-bold);
+	color: color(text, title);
+}
+
+.project-detail__info-column p {
+	margin-top: 10px;
+}
+
+.project-detail__notes {
+	margin-top: 30px;
+}
+
+.project-detail__breakdown-list-item {
+	display: flex;
+	margin-top: 10px;
+}
+
+.breakdown-icon {
+	min-width: 25px;
+	margin-right: 10px;
+}
+
+.breakdown-icon i {
+	color: color(text, title);
+}
+
+.project-detail__notes ul {
+	margin-top: 10px;
+	padding-left: 15px;
+}
+
+.project-detail__notes li {
+	margin-top: 10px;
+	list-style-type: disc;
+}

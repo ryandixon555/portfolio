@@ -1,0 +1,192 @@
+$config-brand: (
+
+	// Variables
+	// =============================================================================
+	vars: (
+		min-width: 320px
+		, max-width: 1168px
+		, page-padding: 16px
+	)
+
+	// Breakpoints
+	// =============================================================================
+	, breakpoints: (
+		xs: 0
+		, sm: 568px
+		, md: 768px
+		, lg: 968px
+		, xl: 1200px
+	)
+
+	// Colors
+	// =============================================================================
+	, colors: (
+		brand: #F8920C
+		, accent: #21332D
+		, secondary: #F2F2F2
+		, text: (
+			primary: #666666
+			, title: #21332D
+		)
+	)
+
+	// Fonts
+	// =============================================================================
+	, fonts: (
+		default: (
+			filePath: 'fonts'
+			, fileTypes: ('eot', 'woff', 'ttf', 'svg')
+			, fontWeight: 'normal'
+			, fontStyle: 'normal'
+		)
+		, Proximanova-Black: (
+			fileName: 'proximanova-black-webfont'
+		)
+		, Proximanova-Extra-Bold: (
+			fileName: 'proximanova-extrabold-webfont'
+		)
+		, Proximanova-Bold: (
+			fileName: 'proximanova-bold-webfont'
+		)
+		, Proximanova-Semi-Bold: (
+			fileName: 'proximanova-semibold-webfont'
+		)
+		, Proximanova-Regular: (
+			fileName: 'proximanova-regular-webfont'
+		)
+		, Proximanova-Light: (
+			fileName: 'proximanova-light-webfont'
+		)
+	)
+
+	// Typography
+	// =============================================================================
+	, typography: (
+		black: (
+			fontFamily: (Proximanova-Black, Helvetica, Arial, Sans-Serif)
+		),
+		extra-bold: (
+			fontFamily: (Proximanova-Extra-Bold, Helvetica, Arial, Sans-Serif)
+		),
+		bold: (
+			fontFamily: (Proximanova-Bold, Helvetica, Arial, Sans-Serif)
+		),
+		semi-bold: (
+			fontFamily: (Proximanova-Semi-Bold, Helvetica, Arial, Sans-Serif)
+		),
+		regular: (
+			fontFamily: (Proximanova-Regular, Helvetica, Arial, Sans-Serif)
+		),
+		light: (
+			fontFamily: (Proximanova-Light, Helvetica, Arial, Sans-Serif)
+		)
+		, header--large: (
+			fontSize: 36px
+			, lineHeight: 1.2
+			, breakpoints: (
+				md: (
+					fontSize: 72px
+				)
+			)
+		)
+		, header: (
+			fontSize: 32px
+			, lineHeight: 1.2
+			, breakpoints: (
+				md: (
+					fontSize: 48px
+				)
+			)
+		)
+		, header--small: (
+			fontSize: 30px
+			, lineHeight: 1.2
+			, breakpoints: (
+				md: (
+					fontSize: 40px
+				)
+			)
+		)
+		, subheader--large: (
+			fontSize: 28px
+			, lineHeight: 1.2
+			, breakpoints: (
+				md: (
+					fontSize: 36px
+				)
+			)
+		)
+		, subheader: (
+			fontSize: 26px
+			, lineHeight: 1.2
+			, breakpoints: (
+				md: (
+					fontSize: 32px
+				)
+			)
+		)
+		, lead--extra--large: (
+			fontSize: 24px
+			, lineHeight: 1.5
+			, breakpoints: (
+				md: (
+					fontSize: 28px
+				)
+			)
+		)
+		, lead--large: (
+			fontSize: 22px
+			, lineHeight: 1.5
+			, breakpoints: (
+				md: (
+					fontSize: 26px
+				)
+			)
+		)
+		, lead: (
+			fontSize: 18px
+			, lineHeight: 1.5
+			, breakpoints: (
+				md: (
+					fontSize: 24px
+				)
+			)
+		)
+		, lead--small: (
+			fontSize: 16px
+			, lineHeight: 1.5
+			, breakpoints: (
+				md: (
+					fontSize: 20px
+				)
+			)
+		)
+		, body--large: (
+			fontSize: 16px
+			, lineHeight: 1.5
+			, breakpoints: (
+				md: (
+					fontSize: 18px
+				)
+			)
+		)
+		, body: (
+			fontSize: 16px
+			, lineHeight: 1.5
+			, breakpoints: (
+				md: (
+					fontSize: 16px
+				)
+			)
+		)
+		, smallprint: (
+			fontSize: 12px
+			, lineHeight: 1.5
+			, breakpoints: (
+				md: (
+					fontSize: 12px
+				)
+			)
+		)
+	)
+);

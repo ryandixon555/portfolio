@@ -1,0 +1,35 @@
+
+// =============================================================================
+// Media query mixins
+// =============================================================================
+
+@mixin breakpoint-over($break) {
+	$this: process-breakpoint($break);
+	$this_exists: map-get($this, exists);
+	$this_val: map-get($this, val);
+
+	@if $this_exists {
+		@media screen and ( min-width: $this_val ) {
+			@content;
+		}
+	}
+	@else {
+		@content;
+	}
+}
+
+@mixin breakpoint-under($break) {
+	$this: process-breakpoint($break);
+	$this_exists: map-get($this, exists);
+	$this_val: map-get($this, val);
+
+	@if $this_exists {
+		@media screen and ( max-width: $this_val ) {
+			@content;
+		}
+	}
+	@else {
+		@content;
+	}
+
+}

@@ -1,0 +1,68 @@
+// =============================================================================
+// BRAND | Footer
+// =============================================================================
+// The detault footer at the bottom of each page
+// -----------------------------------------------------------------------------
+
+.footer {
+	display: flex;
+	padding: 10px 0;
+	background-color: #fff;
+	box-shadow: 0 1px 10px 0 rgba(0,0,0,.2);
+}
+
+.footer__inner {
+	@include page-container;
+
+	@include breakpoint-over(md) {
+		display: flex;
+		align-items: center;
+	}
+}
+
+.footer__links-list {
+	display: flex;
+	flex-wrap: wrap;
+
+	@include breakpoint-over(md) {
+		order: 2;
+	}
+}
+
+.footer__links-list-item {
+	width: 50%;
+	margin-top: 10px;
+
+	@include breakpoint-over(sm) {
+		width: auto;
+		margin-top: 0;
+		margin-right: 20px;
+	}
+}
+
+.footer__links-list a {
+	@include type(smallprint);
+	color: color(text, primary);
+}
+
+.footer__copyright-container {
+	display: flex;
+	align-items: center;
+	margin-top: 10px;
+
+	@include breakpoint-over(md) {
+		margin-top: 0;
+		margin-right: 80px;
+		order: 1;
+	}
+}
+
+.footer__main-logo {
+	width: 48px;
+	height: 30px;
+	margin-right: 20px;
+}
+
+.footer__copyright {
+	@include type(smallprint);
+}

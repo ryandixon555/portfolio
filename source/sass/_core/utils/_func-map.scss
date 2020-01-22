@@ -1,0 +1,28 @@
+@function map-deep-merge($map1, $map2) {
+	@each $key, $value in $map2 {
+		@if( type-of($value) == 'map' ) {
+			@if( map-has-key($map1, $key) ) and (type-of(map-get($map1, $key) == 'map')) {
+				$map1: map-merge($map1, ($key: map-deep-merge(map-get($map1, $key), $value)));
+			} @else {
+				$map1: map-merge($map1, ($key: $value));
+			}
+		} @else if( type-of($value) == 'list' ) {
+			@if(length($value) > 0) {
+				$map1: map-merge($map1, ($key: join(map-get($map1, $key), $value)));
+			}
+		} @else {
+			$map1: map-merge($map1, ($key: $value));
+		}
+	}
+	@return $map1;
+}
+
+@function map-sort-by-map($guideMap, $sortMap) {
+	$sortedMap: map-merge($guideMap, $sortMap);
+	@each $key, $value in $sortedMap {
+		@if(type-of($value) != 'map') {
+			$sortedMap: map-remove($sortedMap, $key);
+		}
+	}
+	@return $sortedMap;
+}

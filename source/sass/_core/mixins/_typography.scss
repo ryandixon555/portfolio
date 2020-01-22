@@ -1,0 +1,38 @@
+// =============================================================================
+// Type Mixins
+// =============================================================================
+
+@mixin typography__create-property($messyProp, $val) {
+    @if(map-has-key($lib__typography-properties, $messyProp)) {
+        $neatProp: map-get($lib__typography-properties, $messyProp);
+        #{$neatProp}: typography__create-value($neatProp, $val);
+    }
+}
+
+@mixin type($name) {
+    @if (map-has-key(typography(), $name)) {
+        $defaults: ();
+        @if(map-has-key(typography(), 'default')) {
+            $defaults: typography('default');
+        }
+
+        $settings: map-merge($defaults, typography($name));
+
+        $breakpoints: map-get($settings, 'breakpoints');
+
+        @each $prop, $val in $settings {
+            @include typography__create-property($prop, $val);
+        };
+
+        @each $break, $breakSettings in $breakpoints {
+            @include breakpoint-over($break) {
+                @each $prop, $val in $breakSettings {
+                    @include typography__create-property($prop, $val);
+                };
+            };
+        };
+    }
+    @else {
+        @warn 'No type named \"#{$name}\" was found.'
+    };
+};

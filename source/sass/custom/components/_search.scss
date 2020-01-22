@@ -1,0 +1,41 @@
+// =============================================================================
+// CUSTOM | Search
+// =============================================================================
+// Styling for the search feature used to filter case studies
+// -----------------------------------------------------------------------------
+
+.search__inner {
+    position: relative;
+    width: 100%;
+	max-width: vars(max-width);
+	margin: 20px auto 0;
+}
+
+.search-form {
+    border-bottom: 2px solid color(accent);
+}
+
+.search__highlight,
+.search-form__input {
+    @include type(header);
+}
+
+.search-form__input {
+    position: relative;
+    width: 100%;
+    border: 0;
+    background: transparent;
+    outline: none;
+}
+
+.search__highlight {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    min-width: 3px;
+    max-width: 100%;
+    border-top: 2px solid color(brand);
+    overflow: hidden;
+    user-select: none;
+}

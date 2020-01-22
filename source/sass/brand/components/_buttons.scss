@@ -1,0 +1,34 @@
+// =============================================================================
+// BRAND | Buttons
+// =============================================================================
+// The default buttons used throughout the site
+// -----------------------------------------------------------------------------
+
+@mixin button($background: color(brand), $border: color(brand), $color: #fff, $background-hover: color(highlight), $border-hover: color(highlight), $color-hover: #fff) {
+	display: inline-block;
+	margin: 0;
+	padding: 8px 14px;
+	background-color: $background;
+	border: 1px solid $border;
+	border-radius: 4.5px;
+	@include type(medium);
+	color: $color;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	appearance: none;
+	transition: color 250ms ease, background-color 250ms ease, border-color 250ms ease;
+	cursor: pointer;
+
+	&:hover {
+		background-color: $background-hover;
+		border-color: $border-hover;
+		color: $color-hover;
+		text-decoration: none;
+	}
+}
+
+@mixin button--large($background: color(brand), $border: color(brand), $color: #fff, $background-hover: color(highlight), $border-hover: color(highlight), $color-hover: #fff) {
+	@include button;
+	padding: 16px 28px;
+}

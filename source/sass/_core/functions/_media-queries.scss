@@ -1,0 +1,49 @@
+@function process-breakpoint($break) {
+    $breakpoint: ();
+
+    $break_val: 0;
+    $break_exists: false;
+    $break_defined: false;
+	@if type-of($break) == string {
+        $break_exists: is-breakpoint-over-zero($break);
+        $break_defined: true;
+        @if $break_exists {
+            $break_val: breakpoint($break);
+        }
+    }
+    @else if type-of($break) == number {
+        $break_exists: true;
+        $break_val: $break;
+    }
+
+    $breakpoint: map-merge($breakpoint, (exists: $break_exists, val: $break_val, defined: $break_defined));
+
+    @if $break_defined {
+        $breaks: map-keys(breakpoint());
+
+        @if index($breaks, $break) - 1 > 0 {
+            $prev: nth($breaks, index($breaks, $break) - 1);
+            $prev_exists: false;
+            $prev_val: 0;
+            @if is-breakpoint-over-zero($prev) {
+                $prev_exists: true;
+                $prev_val: breakpoint($prev);
+            }
+            $breakpoint: map-merge($breakpoint, (prev: (exists: $prev_exists, val: $prev_val)));
+        }
+
+        @if index($breaks, $break) + 1 <= length(breakpoint()) {
+            $next: nth($breaks, index($breaks, $break) + 1);
+            $next_exists: false;
+            $next_val: 0;
+            @if is-breakpoint-over-zero($next) {
+                $next_exists: true;
+                $next_val: breakpoint($next);
+            }
+            $breakpoint: map-merge($breakpoint, (next: (exists: $next_exists, val: $next_val)));
+        }
+    }
+
+    @return $breakpoint;
+
+}

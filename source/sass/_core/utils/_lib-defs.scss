@@ -1,0 +1,102 @@
+// =============================================================================
+// Library
+//
+// This is a store of static data that is universal across any 
+// =============================================================================
+
+
+// A map of collapsed, lowercase names for font weights
+$lib-weightNames: (
+	// 100
+	'thin': 100,
+	'hairline': 100,
+	// 200
+	'extralight': 200,
+	'ultralight': 200,
+	// 300
+	'light': 300,
+	// 400
+	'normal': 400,
+	'regular': 400,
+	// 500
+	'medium': 500,
+	// 600
+	'semibold': 600,
+	'demibold': 600,
+	// 700
+	'bold': 700,
+	// 800
+	'extrabold': 800,
+	'ultrabold': 800,
+	// 900
+	'black': 900,
+	'heavy': 900
+);
+
+$lib__typography-properties: (
+	'fontFamily': 'font-family',
+	'lineHeight': 'line-height',
+	'fontSize': 'font-size',
+	'size': 'font-size',
+	'sizeAdjust': 'font-size-adjust',
+	'fontSizeAdjust': 'font-size-adjust',
+	'fontStyle': 'font-style',
+	'style': 'font-style',
+	'fontVariant': 'font-variant',
+	'variant': 'font-variant',
+	'fontWeight': 'font-weight',
+	'weight': 'font-weight',
+	'color': 'color',
+	'textDecoration': 'text-decoration',
+	'textDecorationColor': 'text-decoration-color',
+	'textDecorationLine': 'text-decoration-line',
+	'textDecorationStyle': 'text-decoration-style',
+	'textDirection': 'text-direction',
+	'textAlign': 'text-align',
+	'textAlignLast': 'text-align-last',
+	'textJustify': 'text-justify',
+	'textOverflow': 'text-overflow',
+	'textShadow': 'text-shadow',
+	'textTransform': 'text-transform',
+	'textIndent': 'text-indent',
+	'wordbreak': 'word-break',
+	'wordSpacing': 'word-spacing',
+	'wordWrap': 'word-wrap',
+	'quotes': 'quotes'
+);
+
+$lib__sorting-shorthands: (
+	a: alpha,
+	alpha: alpha,
+	alphabet: alpha,
+	alphabetical: alpha
+);
+
+$lib__alphabet: (
+	a,
+	b,
+	c,
+	d,
+	e,
+	f,
+	g,
+	h,
+	i,
+	j,
+	k,
+	l,
+	m,
+	n,
+	o,
+	p,
+	q,
+	r,
+	s,
+	t,
+	u,
+	v,
+	w,
+	x,
+	y,
+	z
+);

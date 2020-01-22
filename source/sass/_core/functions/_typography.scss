@@ -1,0 +1,53 @@
+@function typography__create-selector($name, $for) {
+    $selector: ".font__" + $name;
+
+    @if($for) {
+        @each $el in $for {
+            $selector: $selector + ", " + $el;
+        }
+    }
+    @return $selector;
+}
+
+@function typography__create-value($prop, $val) {
+    @if $prop == 'font-family' {
+        $string: '';
+        @if(type-of($val) == 'list') {
+            @for $i from 1 through length($val) {
+                $ifont: nth($val, $i);
+                @if (str-contains($ifont, ' ')) {
+                    $ifont: '\"#{$ifont}\"';
+                }
+                @if($i == 1) {
+                    $string: $ifont;
+                } @else {
+                    $string: $string + ', ' + $ifont;
+                }
+            }
+            @return unquote($string);
+        } @else {
+            @return $val;
+        }
+    }
+    @else if $prop == 'line-height' {
+        @if unitless($val) {
+            @return percentage($val);
+        }
+        @else {
+            @return $val;
+        }
+    }
+    @else if $prop == 'color' {
+        @if type-of($val) == color {
+            @return $val;
+        }
+        @else {
+            @return color($val);
+        }
+
+    }
+    @else {
+        @return $val;
+
+    }
+}

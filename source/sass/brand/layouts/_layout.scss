@@ -1,0 +1,30 @@
+// =============================================================================
+// BRAND | Common Layout
+// =============================================================================
+// The default layout options for the site
+// -----------------------------------------------------------------------------
+
+body,
+html {
+	min-height: 100vh;
+
+	@include browser-specific(ie) {
+		height: 100%;
+	}
+}
+
+body {
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+body.scroll-lock {
+	overflow: hidden;
+}
+
+
+

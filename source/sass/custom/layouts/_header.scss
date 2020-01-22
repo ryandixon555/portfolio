@@ -1,0 +1,26 @@
+// =============================================================================
+// CUSTOM | Header
+// =============================================================================
+// The site header at the top of each page
+// -----------------------------------------------------------------------------
+
+header {
+    position: relative;
+    padding: 40px;
+    background-color: #fff;
+}
+
+.header__text {
+    text-align: center;
+}
+
+.header__text h1,
+.header__text h3 {
+    color: color(text, title);
+}
+
+.header__text h1 {
+    @include type(subheader--large);
+    @include type(extra-bold);
+    text-transform: uppercase;
+}

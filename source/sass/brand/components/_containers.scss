@@ -1,0 +1,13 @@
+// =============================================================================
+// BRAND | Containers
+// =============================================================================
+// Layout containers used in multiple instances for consistency
+// -----------------------------------------------------------------------------
+
+@mixin page-container {
+    width: 100%;
+    min-width: vars(min-width);
+	max-width: vars(max-width);
+	margin: 0 auto;
+	padding: 0 vars(page-padding);
+}

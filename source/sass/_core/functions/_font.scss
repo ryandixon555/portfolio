@@ -1,0 +1,22 @@
+
+@function font__process-source($path, $name, $type, $font) {
+    @if($type == 'woff') {
+        @return 'url("#{$path}/#{$name}.#{$type}") format("woff")';
+    }
+    @if($type == 'woff2') {
+        @return 'url("#{$path}/#{$name}.#{$type}") format("woff2")';
+    }
+    @if($type == 'ttf') {
+        @return 'url("#{$path}/#{$name}.#{$type}") format("truetype")';
+    }
+    @if($type == 'otf') {
+        @return 'url("#{$path}/#{$name}.#{$type}") format("opentype")';
+    }
+    @if($type == 'eot') {
+        @return 'url("#{$path}/#{$name}.#{$type}?#iefix") format("embedded-opentype")';
+    }
+    @if($type == 'svg') {
+        @return 'url("#{$path}/#{$name}.#{$type}##{$font}") format("svg")';
+    }
+    @return 'url("#{$path}/#{$name}.#{$type}")';
+}

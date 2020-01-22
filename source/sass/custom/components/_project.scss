@@ -1,0 +1,65 @@
+// =============================================================================
+// CUSTOM | Project
+// =============================================================================
+// A project block displayed in the list
+// -----------------------------------------------------------------------------
+
+.projects-wrapper {
+    display: flex;
+    overflow: hidden;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin: 15px 0;
+}
+
+.project {
+    background-color: #fff;
+    width: 100%;
+    margin: 25px auto 0;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.45);
+    align-self: flex-start;
+    cursor: pointer;
+
+    @include breakpoint-over(sm) {
+        width: 48%;
+    }
+
+    @include breakpoint-over(lg) {
+        width: 32%;
+    }
+}
+
+.project:hover a {
+    text-decoration: none;
+}
+
+.project__cover {
+    min-height: 200px;
+    margin: 5px;
+    background-position: 50% 0%;
+    background-size: cover;
+}
+
+.project__description {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+
+.project__description h4 {
+    margin-right: 10px;
+    @include type(project-description);
+    @include type(extra-bold);
+    color: color(text, title);
+    text-transform: uppercase;
+}
+
+.client-logo {
+    max-width: 30px;
+}

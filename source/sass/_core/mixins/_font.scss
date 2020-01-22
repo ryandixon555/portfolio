@@ -1,0 +1,65 @@
+@mixin font__init() {
+
+    @if ( type-of(font()) == 'map' ) {
+        $defaults: ();
+        $defaults-placeholder: (
+			filePath: '',
+			fileTypes: '',
+			fontWeight: 'normal',
+			fontStyle: 'normal'
+        );
+
+        @if(map-has-key(font(), 'default')) {
+            $defaults: map-merge($defaults-placeholder, font('default'));
+        }
+        @else {
+            $defaults: $defaults-placeholder;
+        }
+
+        // Get map of fonts with default removed
+        $fonts: map-remove(font(), 'default');
+
+        @each $font, $settings in $fonts {
+            @include font__create-font-declaration($font, map-merge($defaults, $settings));
+        }
+
+    }
+    @else {
+        @debug "No font declarations";
+    }
+}
+
+@mixin font__create-font-declaration($font, $settings) {
+
+    // Get all values for this font
+    $fileTypes: map-get($settings, 'fileTypes');
+    $filePath: map-get($settings, 'filePath');
+    $fileName: map-get($settings, 'fileName');
+    $fontName: $font;
+    $fontWeight: map-get($settings, 'fontWeight');
+    $fontStyle: map-get($settings, 'fontStyle');
+
+    // Remove quotes from name string
+    @if(str-contains($fontName, ' ')) {
+        $fontName: quote($fontName);
+    }
+
+    // Create each source with or without a comma based on
+    //   if it is the last source or not
+    $src: '';
+    @each $fileType in $fileTypes {
+        @if (index($fileTypes, $fileType) == length($fileTypes)) {
+            $src: $src + font__process-source($filePath, $fileName, $fileType, $font);
+        } @else {
+            $src: $src + font__process-source($filePath, $fileName, $fileType, $font) + ',';
+        }
+    }
+
+    // Put all processed variables together in a font-face declaration
+    @font-face {
+        font-family: $fontName;
+        src: unquote($src);
+        font-weight: unquote($fontWeight);
+        font-style: unquote($fontStyle);
+    }
+}

@@ -1,0 +1,36 @@
+// =============================================================================
+// CORE | FUNCTIONS | CONFIG
+// =============================================================================
+
+@function config($keys...) {
+    $map: $config;
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
+
+@function breakpoint($path...) {
+    $query: join('breakpoints', $path);
+    @return config($query...);
+}
+
+@function vars($path...) {
+    $query: join('vars', $path);
+    @return config($query...);
+}
+
+@function color($path...) {
+    $query: join('colors', $path);
+    @return config($query...);
+}
+
+@function typography($path...) {
+    $query: join('typography', $path);
+    @return config($query...);
+}
+
+@function font($path...) {
+    $query: join('fonts', $path);
+    @return config($query...);
+}

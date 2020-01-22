@@ -1,0 +1,31 @@
+// =============================================================================
+// BRAND | Typography
+// =============================================================================
+// The default brand typography used across the site
+// -----------------------------------------------------------------------------
+
+body,
+a,
+p,
+li,
+label,
+input,
+button,
+select,
+textarea {
+	color: color(text, primary);
+	@include type(regular);
+	@include type(body);
+}
+
+strong {
+	@include type(bold);
+}
+
+a {
+	color: color(text, link);
+
+	&:hover {
+		text-decoration: underline;
+	}
+}

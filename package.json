@@ -1,0 +1,42 @@
+{
+  "name": "Avvio.InternalPortfolio",
+  "version": "0.0.1",
+  "description": "description",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "Avvio Reply Ltd",
+  "license": "BSD",
+  "devDependencies": {
+    "cssnano": "^4.1.10",
+    "grunt": "^1.0.4",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-browserify": "^5.3.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^2.0.0",
+    "grunt-contrib-handlebars": "^1.0.0",
+    "grunt-contrib-uglify": "^3.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-exec": "^3.0.0",
+    "grunt-includes": "^1.0.0",
+    "grunt-postcss": "^0.8.0",
+    "grunt-sass": "^2.0.0",
+    "postcss": "^6.0.2",
+    "postcss-cssnext": "^2.11.0"
+  },
+  "dependencies": {
+    "jquery": "^2.2.4",
+    "@avvio-reply/clickortouch": "^1.0.0",
+    "acorn": "^6.2.1",
+    "acorn-dynamic-import": "^4.0.0",
+    "fuse.js": "^3.4.5",
+    "isotope-layout": "^3.0.6",
+    "require-globify": "^1.4.1",
+    "slick-carousel": "^1.8.1"
+  }
+}

@@ -1,0 +1,68 @@
+$config-custom: (
+
+	// Variables
+	// =============================================================================
+	vars: (
+		// max-width: 100%
+	)
+
+	// Breakpoints
+	// =============================================================================
+	, breakpoints: ()
+
+	// Colours
+	// =============================================================================
+	, colors: ()
+
+	// Fonts
+	// =============================================================================
+	, fonts: (
+		fa-brands: (
+			fileName: 'fa-brands-400'
+		)
+		, fa-light: (
+			fileName: 'fa-light-300'
+		)
+		, fa-regular: (
+			fileName: 'fa-regular-400'
+		)
+		, fa-solid: (
+			fileName: 'fa-solid-900'
+		)
+	)
+
+	// Typography
+	// =============================================================================
+	, typography: (
+		fa-brands: (
+			fontFamily: (fa-brands, Helvetica, Arial, Sans-Serif)
+		),
+		fa-regular: (
+			fontFamily: (fa-regular, Helvetica, Arial, Sans-Serif)
+		),
+		fa-light: (
+			fontFamily: (fa-light, Helvetica, Arial, Sans-Serif)
+		),
+		fa-solid: (
+			fontFamily: (fa-solid, Helvetica, Arial, Sans-Serif)
+		),
+		filters: (
+			fontSize: 18px
+			, lineHeight: 1
+			, breakpoints: (
+				md: (
+					fontSize: 18px
+				)
+			)
+		),
+		project-description: (
+			fontSize: 14px
+			, lineHeight: 1.2
+			, breakpoints: (
+				md: (
+					fontSize: 14px
+				)
+			)
+		)
+	)
+);

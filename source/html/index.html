@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	include "partials/head.html"
+</head>
+<body>
+	<header class="header">
+		<div class="header__inner">
+			<div class="header__text">
+				<h3>Avvio Reply</h3>
+				<h1>Digital Portfolio</h1>
+			</div>
+			<div class="search__inner">
+				<form class="search-form">
+					<input type="text" placeholder="Search" class="search-form__input" maxlength="30" autocomplete="off">
+				</form>
+				<span class="search__highlight"></span>
+			</div>
+		</div>
+	</header>
+	<main class="main" id="main">
+		<div class="main__section">
+			<div class="main__inner">
+				<div class="projects-wrapper">
+					<div class="projects__filter"></div>
+					<ul class="projects"></ul>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+<script type="text/template" id="projectTile">
+	<li class="project" data-id="{{id}}">
+		<a href="#{{id}}">
+			<div class="project__cover" style="background-image: url('content/images/projects/{{contentFolder}}/cover.jpg')"></div>
+			<div class="project__description">
+				<h4>{{projectName}}</h4>
+				<img class="client-logo" src="content/images/clients/{{client}}.png" />
+			</div>
+		</a>
+	</li>
+</script>
+<script type="text/template" id="project">
+	<div class="overlay overlay--show">
+		<div class="project-detail">
+			<div class="project-detail__close" href="/"><i class="fas fa-times"></i></div>
+			<div class="project-detail__overview">
+				<h3>{{client}}</h3>
+				<h1>{{projectName}}</h1>
+			</div>
+			<div class="project-detail__images">
+				{{#each images}}
+					<li>
+						<img src="content/images/projects/{{../contentFolder}}/{{this}}">
+					</li>
+				{{/each}}
+			</div>
+			<div class="project-detail__images-nav"></div>
+			<div class="project-detail__info-container">
+				<div class="project-detail__info-column">
+					<div class="project-detail__description">
+						<h2>Overview:</h2>
+						<p>{{description}}</p>
+					</div>
+					<div class="project-detail__notes">
+						<h2>Notes:</h2>
+						<ul>
+							{{#each notes}}
+								<li>
+									<span>{{this}}</span>
+								</li>
+							{{/each}}
+						</ul>
+					</div>
+				</div>
+				<div class="project-detail__info-column">
+					<div class="project-detail__breakdown">
+						<ul class="project-detail__breakdown-list">
+							<li class="project-detail__breakdown-list-item">
+								<div class="breakdown-icon">
+									<i class="fas fa-code"></i>
+								</div>
+								<div class="breakdown-text">
+									<span>{{jobNumber}}</span>
+								</div>
+							</li>
+							<li class="project-detail__breakdown-list-item">
+								<div class="breakdown-icon">
+									<i class="fas fa-calendar"></i>
+								</div>
+								<div class="breakdown-text">
+									<span>{{month}}/{{year}}</span>
+								</div>
+							</li>
+							<li class="project-detail__breakdown-list-item">
+								<div class="breakdown-icon">
+									<i class="fas fa-tag"></i>
+								</div>
+								<div class="breakdown-text">
+									<ul>
+										{{#each tags}}
+											<span>{{this}}, </span>
+										{{/each}}
+									<ul>
+								</div>
+							</li>
+							<li class="project-detail__breakdown-list-item">
+								<div class="breakdown-icon">
+									<i class="fas fa-users"></i>
+								</div>
+								<div class="breakdown-text">
+									<ul>
+										{{#each workedOnBy}}
+											<li>
+												<a href="{{email}}">{{name}}</a>
+											</li>
+										{{/each}}
+									<ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</script>
+</html>

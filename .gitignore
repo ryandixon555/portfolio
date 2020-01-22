@@ -1,0 +1,6 @@
+node_modules/
+public/content/js/main.js
+public/content/main.css
+public/content/main.css.map
+public/*.html
+package-lock.json
