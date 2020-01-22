@@ -18,10 +18,10 @@ module.exports = exports = [
 		description: "A quiz game where you have to guess the movies title by the image.",
 		tags: ["Quiz","Game", "Avvio", "Avvio Reply"],
 		notes: [],
-		contentFolder: "Avvio Movie Challenge",
+		contentFolder: "avvio movie challenge",
 		noImages: 3,
-		playableLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html",
-		githubLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html"
+		playableLink: "https://ryandixon555.github.io/avvio-guess-the-movie/public/index.html",
+		githubLink: "https://github.com/ryandixon555/avvio-guess-the-movie"
 	},
 	{
 		id: 9,
