@@ -44,8 +44,8 @@ module.exports = exports = [
 		notes: [],
 		contentFolder: "avvio wheel of fortune",
 		noImages: 3,
-		playableLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html",
-		githubLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html"
+		playableLink: "https://ryandixon555.github.io/avvio-wheel-of-fortune/public/index.html",
+		githubLink: "https://github.com/ryandixon555/avvio-wheel-of-fortune"
 	},
 	{
 		id: 6,
