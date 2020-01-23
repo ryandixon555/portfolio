@@ -1,6 +1,6 @@
 module.exports = exports = [
 	{
-		id: 11,
+		id: 10,
 		client: "Avvio",
 		name: "Wordsearch Game",
 		description: "A wordsearch game",
@@ -12,7 +12,7 @@ module.exports = exports = [
 		githubLink: "https://github.com/ryandixon555/avvio-wordsearch/tree/master"
 	},
 	{
-		id: 10,
+		id: 9,
 		client: "Avvio",
 		name: "Christmas Movie Challenge",
 		description: "A quiz game where you have to guess the movies title by the image.",
@@ -24,28 +24,16 @@ module.exports = exports = [
 		githubLink: "https://github.com/ryandixon555/avvio-guess-the-movie"
 	},
 	{
-		id: 9,
-		client: "Avvio",
-		name: "Avvio Digital Puzzle",
-		description: "A 9-square puzzle against the clock. Match the pattern on the side to be in for a chance to win a prize.",
-		tags: ["Puzzle","Game", "Avvio", "Avvio Reply", "Vanilla JS"],
-		notes: [],
-		contentFolder: "avvio digital puzzle",
-		noImages: 3,
-		playableLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html",
-		githubLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html"
-	},
-	{
 		id: 8,
 		client: "Avvio",
 		name: "Superhero Name Generator",
 		description: "A very simple superhero name generator.",
-		tags: ["Generator","Game", "Avvio", "Avvio Reply", "Vanilla JS"],
+		tags: ["Generator","Game", "Avvio", "Avvio Reply", "Vanilla JS", "Popups"],
 		notes: [],
 		contentFolder: "avvio superhero name generator",
-		noImages: 5,
-		playableLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html",
-		githubLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html"
+		noImages: 3,
+		playableLink: "https://ryandixon555.github.io/avvio-superhero-name-generator/public/index.html",
+		githubLink: "https://github.com/ryandixon555/avvio-superhero-name-generator/tree/master"
 	},
 	{
 		id: 7,
