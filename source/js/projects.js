@@ -39,11 +39,11 @@ module.exports = exports = [
 		id: 7,
 		client: "Avvio",
 		name: "Wheel of Fortune",
-		description: "A Wheel of Fortune that employees to earn points. They had 3 spins to earn as many points as possible to win prizes.",
+		description: "A Wheel of Fortune game. 3 spins to earn as many points as possible to win prizes.",
 		tags: ["Game", "Avvio", "Avvio Reply", "Gambling", "Vanilla JS"],
 		notes: [],
 		contentFolder: "avvio wheel of fortune",
-		noImages: 5,
+		noImages: 3,
 		playableLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html",
 		githubLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html"
 	},
