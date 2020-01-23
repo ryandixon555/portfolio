@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link rel="icon" type="image/png" href="content/images/icons/favicon.png" />
+	<link rel="shortcut icon" href="content/images/icons/favicon.ico">
+	<link sizes="16x16" rel="icon" href="content/images/icons/favicon.png">
+	<link sizes="32x32" rel="icon" href="content/images/icons/favicon-32.png">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="apple-touch-icon-precomposed" href="content/images/icons/apple-touch-icon-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="180x180" href="content/images/icons/apple-touch-icon-180x180-precomposed.png">
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://kenwheeler.github.io/slick/slick/slick.js"></script> -->
+	<script src="content/js/main.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="content/main.css" />
+	<title>Digital Portfolio | Ryan Dixon</title>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+
+</head>
+<body>
+	<header class="header">
+		<div class="header__inner">
+			<div class="header__text">
+				<h3>Ryan Dixon</h3>
+				<h1>Digital Portfolio</h1>
+			</div>
+			<div class="search__inner">
+				<form class="search-form">
+					<input type="text" placeholder="Search" class="search-form__input" maxlength="30" autocomplete="off">
+				</form>
+				<span class="search__highlight"></span>
+			</div>
+		</div>
+	</header>
+	<main class="main" id="main">
+		<div class="main__section">
+			<div class="main__inner">
+				<div class="projects-wrapper">
+					<div class="projects__filter"></div>
+					<ul class="projects"></ul>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+<script type="text/template" id="projectTile">
+	<li class="project" data-id="{{id}}">
+		<a href="#{{id}}">
+			<div class="project__cover" style="background-image: url('content/images/projects/{{contentFolder}}/cover.jpg')"></div>
+			<div class="project__description">
+				<h4>{{projectName}}</h4>
+				<img class="client-logo" src="content/images/clients/{{client}}.png" />
+			</div>
+		</a>
+	</li>
+</script>
+<script type="text/template" id="project">
+	<div class="overlay overlay--show">
+		<div class="project-detail">
+			<div class="project-detail__close" href="/"><i class="fas fa-times"></i></div>
+			<div class="project-detail__overview">
+				<h3>Client: {{client}}</h3>
+				<h1>{{projectName}}</h1>
+			</div>
+			<div class="project-detail__images">
+				{{#each images}}
+					<li>
+						<img src="content/images/projects/{{../contentFolder}}/{{this}}">
+					</li>
+				{{/each}}
+			</div>
+			<div class="project-detail__images-nav"></div>
+			<div class="project-detail__info-container">
+				<div class="project-detail__info-column">
+					<div class="project-detail__description">
+						<h2>Overview:</h2>
+						<p>{{description}}</p>
+					</div>
+					<!-- <div class="project-detail__notes">
+						<h2>Notes:</h2>
+						<ul>
+							{{#each notes}}
+								<li>
+									<span>{{this}}</span>
+								</li>
+							{{/each}}
+						</ul>
+					</div> -->
+				</div>
+				<div class="project-detail__info-column">
+					<div class="project-detail__breakdown">
+						<ul class="project-detail__breakdown-list">
+							<li class="project-detail__breakdown-list-item">
+								<div class="breakdown-icon">
+									<i class="fas fa-users"></i>
+								</div>
+								<div class="breakdown-text">
+									<ul>
+										<span>{{client}}</span>
+									<ul>
+								</div>
+							</li>
+							<li class="project-detail__breakdown-list-item">
+								<div class="breakdown-icon">
+									<i class="fas fa-tag"></i>
+								</div>
+								<div class="breakdown-text">
+									<ul>
+										{{#each tags}}
+											<span>{{this}}, </span>
+										{{/each}}
+									<ul>
+								</div>
+							</li>
+							
+							<li class="project-detail__breakdown-list-item">
+								<div class="breakdown-icon">
+									<span>Playable Link:</span>
+								</div>
+								<div class="breakdown-text">
+									<ul>
+										<a href='{{playableLink}}' target="_blank">Click here to play the game</a>
+									<ul>
+								</div>
+							</li>
+							
+							<li class="project-detail__breakdown-list-item">
+								<div class="breakdown-icon">
+									<a>GitHub Link:</a>
+								</div>
+								<div class="breakdown-text">
+									<ul>
+										<a href='{{githubLink}}' target="_blank">Click here to see the code on GitHub</a>
+									<ul>
+								</div>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</script>
+</html>
