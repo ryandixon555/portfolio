@@ -20879,19 +20879,19 @@ $(document).ready(function() {
             .append(templates.project(model))
             .addClass('scroll-lock');
 
-        setTimeout(function(){
-            $('.project-detail__images').slick({
-                dots: true,
-                dotsClass: 'project-images__dots',
-                prevArrow: '<i class="fas fa-chevron-left slick-prev"></i>',
-                nextArrow: '<i class="fas fa-chevron-right slick-next"></i>',
-                infinite: true,
-                speed: 500,
-                fade: true,
-                cssEase: 'linear',
-                adaptiveHeight: true
-            });
-        }, 100);
+        // setTimeout(function(){
+        //     $('.project-detail__images').slick({
+        //         dots: true,
+        //         dotsClass: 'project-images__dots',
+        //         prevArrow: '<i class="fas fa-chevron-left slick-prev"></i>',
+        //         nextArrow: '<i class="fas fa-chevron-right slick-next"></i>',
+        //         infinite: true,
+        //         speed: 500,
+        //         fade: true,
+        //         cssEase: 'linear',
+        //         adaptiveHeight: true
+        //     });
+        // }, 100);
     }
 
     $(window).on('hashchange', function() {
