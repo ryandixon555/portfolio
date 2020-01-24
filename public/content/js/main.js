@@ -20859,7 +20859,7 @@ $(document).ready(function() {
         var projectImages = [];
 
         for (i = 1; i < project.noImages + 1; i++) {
-            projectImages.push([i] + '.jpg');
+            projectImages.push([i] + '.png');
         }
 
         var model = {
@@ -20941,7 +20941,7 @@ module.exports = exports = [
 		id: 6,
 		client: "Personal Projects",
 		name: "Recipe App",
-		description: "An app showing you recipes. Made using REactJS where is connects to an API. Also includes filtering.",
+		description: "An app showing you recipes. Made using ReactJS where is connects to an API. Also includes filtering.",
 		tags: ["ReactJS", "filtering", "JavaScript"],
 		notes: [],
 		contentFolder: "react recipe",
