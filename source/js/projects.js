@@ -9,7 +9,7 @@ module.exports = exports = [
 		contentFolder: "react recipe",
 		noImages: 1,
 		playableLink: "https://react-js-recipe.netlify.com/",
-		githubLink: ""
+		githubLink: "https://github.com/ryandixon555/"
 	},
 	{
 		id: 5,
