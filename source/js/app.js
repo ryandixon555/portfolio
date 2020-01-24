@@ -95,7 +95,7 @@ $(document).ready(function() {
         var projectImages = [];
 
         for (i = 1; i < project.noImages + 1; i++) {
-            projectImages.push([i] + '.jpg');
+            projectImages.push([i] + '.png');
         }
 
         var model = {
