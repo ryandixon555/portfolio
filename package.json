@@ -1,5 +1,5 @@
 {
-  "name": "Avvio.InternalPortfolio",
+  "name": "RyanDixonPortfolio",
   "version": "0.0.1",
   "description": "description",
   "main": "index.html",
@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "",
-  "author": "Avvio Reply Ltd",
-  "license": "BSD",
+  "author": "Ryan Dixon",
+  "license": "MIT",
   "devDependencies": {
     "cssnano": "^4.1.10",
     "grunt": "^1.0.4",
@@ -30,12 +30,12 @@
     "postcss-cssnext": "^2.11.0"
   },
   "dependencies": {
-    "jquery": "^2.2.4",
-    "@avvio-reply/clickortouch": "^1.0.0",
     "acorn": "^6.2.1",
     "acorn-dynamic-import": "^4.0.0",
     "fuse.js": "^3.4.5",
     "isotope-layout": "^3.0.6",
+    "jquery": "^2.2.4",
+    "node-sass": "^4.13.1",
     "require-globify": "^1.4.1",
     "slick-carousel": "^1.8.1"
   }

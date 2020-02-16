@@ -1,90 +1,6 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-///
-///     Common click or touch event handler with locking feature.
-///   
-///     © 2019 Avvio Reply Ltd
-///
 
-'use strict';
-
-var $ = require('jquery')
-    , events = 'click touchmove touchend'
-    , touchmove = 'touchmove'
-    , touchend = 'touchend'
-    , click = 'click';
-
-
-var ClickOrTouch = function(selector, useLock, onEvent, acceptGesturesAsClick){
-
-	if (typeof acceptGesturesAsClick != 'boolean')
-		acceptGesturesAsClick = false;
-
-    var self = this
-
-        , handler = function(e){
-            e.preventDefault();
-
-            self.$target = $(e.currentTarget);
-			
-            /* ignore click/touch on scroll event */
-            if (e.type == touchmove && !acceptGesturesAsClick){
-                self.cancel = true;
-                return true;
-            } else if (e.type == touchend && self.cancel){
-                self.cancel = false;
-                return true;
-            }
-
-            /* locking prevents subsequent interaction being processed */
-            if (useLock){
-                if (self.lock)
-                    return;
-                self.lock = true;
-            }
-
-            /* ios tablet/phone will raise back-to-back touch and click events.
-                ensure the second event is ignored. */
-            var thisLast = self.last;
-            self.last = e.type;
-            if (thisLast == touchend && e.type == click ||
-				thisLast == click && e.type == touchend){
-					
-				/* clear sequence tracking */
-				self.last = null;
-
-				return;
-			}
-			
-			/* evaluate the core handler only on isolated click/touchend */
-			onEvent.call(self, e);
-        };
-
-    if (useLock)
-        self.lock = false;
-
-    self.cancel = false;
-    self.last = null;
-
-    self.unbind = function(){
-        $(document).off(events, selector, handler);
-        return self;
-    };
-
-    $(document).on(events, selector, handler);
-};
-
-/** default behaviour is to unlock the event, but locking is optional via trueOrFalse */
-ClickOrTouch.prototype.unlock = function(trueOrFalse){
-    this.lock = (typeof trueOrFalse == 'boolean' ? !trueOrFalse : false);
-    return this;
-};
-
-
-
-module.exports = ClickOrTouch;
-},{"jquery":34}],2:[function(require,module,exports){
-
-},{}],3:[function(require,module,exports){
+},{}],2:[function(require,module,exports){
 /*!
  * Fuse.js v3.4.6 - Lightweight fuzzy-search (http://fusejs.io)
  * 
@@ -94,7 +10,7 @@ module.exports = ClickOrTouch;
  * http://www.apache.org/licenses/LICENSE-2.0
  */
 !function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define("Fuse",[],t):"object"==typeof exports?exports.Fuse=t():e.Fuse=t()}(this,function(){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=1)}([function(e,t){e.exports=function(e){return Array.isArray?Array.isArray(e):"[object Array]"===Object.prototype.toString.call(e)}},function(e,t,n){function r(e){return(r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function o(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}var i=n(2),a=n(8),s=n(0),c=function(){function e(t,n){var r=n.location,o=void 0===r?0:r,i=n.distance,s=void 0===i?100:i,c=n.threshold,h=void 0===c?.6:c,l=n.maxPatternLength,u=void 0===l?32:l,f=n.caseSensitive,d=void 0!==f&&f,v=n.tokenSeparator,p=void 0===v?/ +/g:v,g=n.findAllMatches,y=void 0!==g&&g,m=n.minMatchCharLength,k=void 0===m?1:m,S=n.id,x=void 0===S?null:S,b=n.keys,M=void 0===b?[]:b,_=n.shouldSort,L=void 0===_||_,w=n.getFn,A=void 0===w?a:w,C=n.sortFn,I=void 0===C?function(e,t){return e.score-t.score}:C,O=n.tokenize,j=void 0!==O&&O,P=n.matchAllTokens,F=void 0!==P&&P,T=n.includeMatches,z=void 0!==T&&T,E=n.includeScore,K=void 0!==E&&E,$=n.verbose,J=void 0!==$&&$;!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),this.options={location:o,distance:s,threshold:h,maxPatternLength:u,isCaseSensitive:d,tokenSeparator:p,findAllMatches:y,minMatchCharLength:k,id:x,keys:M,includeMatches:z,includeScore:K,shouldSort:L,getFn:A,sortFn:I,verbose:J,tokenize:j,matchAllTokens:F},this.setCollection(t)}var t,n,c;return t=e,(n=[{key:"setCollection",value:function(e){return this.list=e,e}},{key:"search",value:function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{limit:!1};this._log('---------\nSearch pattern: "'.concat(e,'"'));var n=this._prepareSearchers(e),r=n.tokenSearchers,o=n.fullSearcher,i=this._search(r,o),a=i.weights,s=i.results;return this._computeScore(a,s),this.options.shouldSort&&this._sort(s),t.limit&&"number"==typeof t.limit&&(s=s.slice(0,t.limit)),this._format(s)}},{key:"_prepareSearchers",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=[];if(this.options.tokenize)for(var n=e.split(this.options.tokenSeparator),r=0,o=n.length;r<o;r+=1)t.push(new i(n[r],this.options));return{tokenSearchers:t,fullSearcher:new i(e,this.options)}}},{key:"_search",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[],t=arguments.length>1?arguments[1]:void 0,n=this.list,r={},o=[];if("string"==typeof n[0]){for(var i=0,a=n.length;i<a;i+=1)this._analyze({key:"",value:n[i],record:i,index:i},{resultMap:r,results:o,tokenSearchers:e,fullSearcher:t});return{weights:null,results:o}}for(var s={},c=0,h=n.length;c<h;c+=1)for(var l=n[c],u=0,f=this.options.keys.length;u<f;u+=1){var d=this.options.keys[u];if("string"!=typeof d){if(s[d.name]={weight:1-d.weight||1},d.weight<=0||d.weight>1)throw new Error("Key weight has to be > 0 and <= 1");d=d.name}else s[d]={weight:1};this._analyze({key:d,value:this.options.getFn(l,d),record:l,index:c},{resultMap:r,results:o,tokenSearchers:e,fullSearcher:t})}return{weights:s,results:o}}},{key:"_analyze",value:function(e,t){var n=e.key,r=e.arrayIndex,o=void 0===r?-1:r,i=e.value,a=e.record,c=e.index,h=t.tokenSearchers,l=void 0===h?[]:h,u=t.fullSearcher,f=void 0===u?[]:u,d=t.resultMap,v=void 0===d?{}:d,p=t.results,g=void 0===p?[]:p;if(null!=i){var y=!1,m=-1,k=0;if("string"==typeof i){this._log("\nKey: ".concat(""===n?"-":n));var S=f.search(i);if(this._log('Full text: "'.concat(i,'", score: ').concat(S.score)),this.options.tokenize){for(var x=i.split(this.options.tokenSeparator),b=[],M=0;M<l.length;M+=1){var _=l[M];this._log('\nPattern: "'.concat(_.pattern,'"'));for(var L=!1,w=0;w<x.length;w+=1){var A=x[w],C=_.search(A),I={};C.isMatch?(I[A]=C.score,y=!0,L=!0,b.push(C.score)):(I[A]=1,this.options.matchAllTokens||b.push(1)),this._log('Token: "'.concat(A,'", score: ').concat(I[A]))}L&&(k+=1)}m=b[0];for(var O=b.length,j=1;j<O;j+=1)m+=b[j];m/=O,this._log("Token score average:",m)}var P=S.score;m>-1&&(P=(P+m)/2),this._log("Score average:",P);var F=!this.options.tokenize||!this.options.matchAllTokens||k>=l.length;if(this._log("\nCheck Matches: ".concat(F)),(y||S.isMatch)&&F){var T=v[c];T?T.output.push({key:n,arrayIndex:o,value:i,score:P,matchedIndices:S.matchedIndices}):(v[c]={item:a,output:[{key:n,arrayIndex:o,value:i,score:P,matchedIndices:S.matchedIndices}]},g.push(v[c]))}}else if(s(i))for(var z=0,E=i.length;z<E;z+=1)this._analyze({key:n,arrayIndex:z,value:i[z],record:a,index:c},{resultMap:v,results:g,tokenSearchers:l,fullSearcher:f})}}},{key:"_computeScore",value:function(e,t){this._log("\n\nComputing score:\n");for(var n=0,r=t.length;n<r;n+=1){for(var o=t[n].output,i=o.length,a=1,s=1,c=0;c<i;c+=1){var h=e?e[o[c].key].weight:1,l=(1===h?o[c].score:o[c].score||.001)*h;1!==h?s=Math.min(s,l):(o[c].nScore=l,a*=l)}t[n].score=1===s?a:s,this._log(t[n])}}},{key:"_sort",value:function(e){this._log("\n\nSorting...."),e.sort(this.options.sortFn)}},{key:"_format",value:function(e){var t=[];if(this.options.verbose){var n=[];this._log("\n\nOutput:\n\n",JSON.stringify(e,function(e,t){if("object"===r(t)&&null!==t){if(-1!==n.indexOf(t))return;n.push(t)}return t})),n=null}var o=[];this.options.includeMatches&&o.push(function(e,t){var n=e.output;t.matches=[];for(var r=0,o=n.length;r<o;r+=1){var i=n[r];if(0!==i.matchedIndices.length){var a={indices:i.matchedIndices,value:i.value};i.key&&(a.key=i.key),i.hasOwnProperty("arrayIndex")&&i.arrayIndex>-1&&(a.arrayIndex=i.arrayIndex),t.matches.push(a)}}}),this.options.includeScore&&o.push(function(e,t){t.score=e.score});for(var i=0,a=e.length;i<a;i+=1){var s=e[i];if(this.options.id&&(s.item=this.options.getFn(s.item,this.options.id)[0]),o.length){for(var c={item:s.item},h=0,l=o.length;h<l;h+=1)o[h](s,c);t.push(c)}else t.push(s.item)}return t}},{key:"_log",value:function(){var e;this.options.verbose&&(e=console).log.apply(e,arguments)}}])&&o(t.prototype,n),c&&o(t,c),e}();e.exports=c},function(e,t,n){function r(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}var o=n(3),i=n(4),a=n(7),s=function(){function e(t,n){var r=n.location,o=void 0===r?0:r,i=n.distance,s=void 0===i?100:i,c=n.threshold,h=void 0===c?.6:c,l=n.maxPatternLength,u=void 0===l?32:l,f=n.isCaseSensitive,d=void 0!==f&&f,v=n.tokenSeparator,p=void 0===v?/ +/g:v,g=n.findAllMatches,y=void 0!==g&&g,m=n.minMatchCharLength,k=void 0===m?1:m;!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),this.options={location:o,distance:s,threshold:h,maxPatternLength:u,isCaseSensitive:d,tokenSeparator:p,findAllMatches:y,minMatchCharLength:k},this.pattern=this.options.isCaseSensitive?t:t.toLowerCase(),this.pattern.length<=u&&(this.patternAlphabet=a(this.pattern))}var t,n,s;return t=e,(n=[{key:"search",value:function(e){if(this.options.isCaseSensitive||(e=e.toLowerCase()),this.pattern===e)return{isMatch:!0,score:0,matchedIndices:[[0,e.length-1]]};var t=this.options,n=t.maxPatternLength,r=t.tokenSeparator;if(this.pattern.length>n)return o(e,this.pattern,r);var a=this.options,s=a.location,c=a.distance,h=a.threshold,l=a.findAllMatches,u=a.minMatchCharLength;return i(e,this.pattern,this.patternAlphabet,{location:s,distance:c,threshold:h,findAllMatches:l,minMatchCharLength:u})}}])&&r(t.prototype,n),s&&r(t,s),e}();e.exports=s},function(e,t){var n=/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g;e.exports=function(e,t){var r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:/ +/g,o=new RegExp(t.replace(n,"\\$&").replace(r,"|")),i=e.match(o),a=!!i,s=[];if(a)for(var c=0,h=i.length;c<h;c+=1){var l=i[c];s.push([e.indexOf(l),l.length-1])}return{score:a?.5:1,isMatch:a,matchedIndices:s}}},function(e,t,n){var r=n(5),o=n(6);e.exports=function(e,t,n,i){for(var a=i.location,s=void 0===a?0:a,c=i.distance,h=void 0===c?100:c,l=i.threshold,u=void 0===l?.6:l,f=i.findAllMatches,d=void 0!==f&&f,v=i.minMatchCharLength,p=void 0===v?1:v,g=s,y=e.length,m=u,k=e.indexOf(t,g),S=t.length,x=[],b=0;b<y;b+=1)x[b]=0;if(-1!==k){var M=r(t,{errors:0,currentLocation:k,expectedLocation:g,distance:h});if(m=Math.min(M,m),-1!==(k=e.lastIndexOf(t,g+S))){var _=r(t,{errors:0,currentLocation:k,expectedLocation:g,distance:h});m=Math.min(_,m)}}k=-1;for(var L=[],w=1,A=S+y,C=1<<(S<=31?S-1:30),I=0;I<S;I+=1){for(var O=0,j=A;O<j;){r(t,{errors:I,currentLocation:g+j,expectedLocation:g,distance:h})<=m?O=j:A=j,j=Math.floor((A-O)/2+O)}A=j;var P=Math.max(1,g-j+1),F=d?y:Math.min(g+j,y)+S,T=Array(F+2);T[F+1]=(1<<I)-1;for(var z=F;z>=P;z-=1){var E=z-1,K=n[e.charAt(E)];if(K&&(x[E]=1),T[z]=(T[z+1]<<1|1)&K,0!==I&&(T[z]|=(L[z+1]|L[z])<<1|1|L[z+1]),T[z]&C&&(w=r(t,{errors:I,currentLocation:E,expectedLocation:g,distance:h}))<=m){if(m=w,(k=E)<=g)break;P=Math.max(1,2*g-k)}}if(r(t,{errors:I+1,currentLocation:g,expectedLocation:g,distance:h})>m)break;L=T}return{isMatch:k>=0,score:0===w?.001:w,matchedIndices:o(x,p)}}},function(e,t){e.exports=function(e,t){var n=t.errors,r=void 0===n?0:n,o=t.currentLocation,i=void 0===o?0:o,a=t.expectedLocation,s=void 0===a?0:a,c=t.distance,h=void 0===c?100:c,l=r/e.length,u=Math.abs(s-i);return h?l+u/h:u?1:l}},function(e,t){e.exports=function(){for(var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[],t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:1,n=[],r=-1,o=-1,i=0,a=e.length;i<a;i+=1){var s=e[i];s&&-1===r?r=i:s||-1===r||((o=i-1)-r+1>=t&&n.push([r,o]),r=-1)}return e[i-1]&&i-r>=t&&n.push([r,i-1]),n}},function(e,t){e.exports=function(e){for(var t={},n=e.length,r=0;r<n;r+=1)t[e.charAt(r)]=0;for(var o=0;o<n;o+=1)t[e.charAt(o)]|=1<<n-o-1;return t}},function(e,t,n){var r=n(0);e.exports=function(e,t){return function e(t,n,o){if(n){var i=n.indexOf("."),a=n,s=null;-1!==i&&(a=n.slice(0,i),s=n.slice(i+1));var c=t[a];if(null!=c)if(s||"string"!=typeof c&&"number"!=typeof c)if(r(c))for(var h=0,l=c.length;h<l;h+=1)e(c[h],s,o);else s&&e(c,s,o);else o.push(c.toString())}else o.push(t);return o}(e,t,[])}}])});
-},{}],4:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -161,7 +77,7 @@ exports['default'] = inst;
 module.exports = exports['default'];
 
 
-},{"./handlebars.runtime":5,"./handlebars/compiler/ast":7,"./handlebars/compiler/base":8,"./handlebars/compiler/compiler":10,"./handlebars/compiler/javascript-compiler":12,"./handlebars/compiler/visitor":15,"./handlebars/no-conflict":29}],5:[function(require,module,exports){
+},{"./handlebars.runtime":4,"./handlebars/compiler/ast":6,"./handlebars/compiler/base":7,"./handlebars/compiler/compiler":9,"./handlebars/compiler/javascript-compiler":11,"./handlebars/compiler/visitor":14,"./handlebars/no-conflict":28}],4:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -229,7 +145,7 @@ exports['default'] = inst;
 module.exports = exports['default'];
 
 
-},{"./handlebars/base":6,"./handlebars/exception":19,"./handlebars/no-conflict":29,"./handlebars/runtime":30,"./handlebars/safe-string":31,"./handlebars/utils":32}],6:[function(require,module,exports){
+},{"./handlebars/base":5,"./handlebars/exception":18,"./handlebars/no-conflict":28,"./handlebars/runtime":29,"./handlebars/safe-string":30,"./handlebars/utils":31}],5:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -335,7 +251,7 @@ exports.createFrame = _utils.createFrame;
 exports.logger = _logger2['default'];
 
 
-},{"./decorators":17,"./exception":19,"./helpers":20,"./logger":28,"./utils":32}],7:[function(require,module,exports){
+},{"./decorators":16,"./exception":18,"./helpers":19,"./logger":27,"./utils":31}],6:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -368,7 +284,7 @@ exports['default'] = AST;
 module.exports = exports['default'];
 
 
-},{}],8:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -418,7 +334,7 @@ function parse(input, options) {
 }
 
 
-},{"../utils":32,"./helpers":11,"./parser":13,"./whitespace-control":16}],9:[function(require,module,exports){
+},{"../utils":31,"./helpers":10,"./parser":12,"./whitespace-control":15}],8:[function(require,module,exports){
 /* global define */
 'use strict';
 
@@ -586,7 +502,7 @@ exports['default'] = CodeGen;
 module.exports = exports['default'];
 
 
-},{"../utils":32,"source-map":46}],10:[function(require,module,exports){
+},{"../utils":31,"source-map":45}],9:[function(require,module,exports){
 /* eslint-disable new-cap */
 
 'use strict';
@@ -1161,7 +1077,7 @@ function transformLiteralToPath(sexpr) {
 }
 
 
-},{"../exception":19,"../utils":32,"./ast":7}],11:[function(require,module,exports){
+},{"../exception":18,"../utils":31,"./ast":6}],10:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -1391,7 +1307,7 @@ function preparePartialBlock(open, program, close, locInfo) {
 }
 
 
-},{"../exception":19}],12:[function(require,module,exports){
+},{"../exception":18}],11:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -2524,7 +2440,7 @@ exports['default'] = JavaScriptCompiler;
 module.exports = exports['default'];
 
 
-},{"../base":6,"../exception":19,"../utils":32,"./code-gen":9}],13:[function(require,module,exports){
+},{"../base":5,"../exception":18,"../utils":31,"./code-gen":8}],12:[function(require,module,exports){
 // File ignored in coverage tests via setting in .istanbul.yml
 /* Jison generated parser */
 "use strict";
@@ -3263,7 +3179,7 @@ var handlebars = (function () {
 module.exports = exports["default"];
 
 
-},{}],14:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 /* eslint-disable new-cap */
 'use strict';
 
@@ -3451,7 +3367,7 @@ PrintVisitor.prototype.HashPair = function (pair) {
 /* eslint-enable new-cap */
 
 
-},{"./visitor":15}],15:[function(require,module,exports){
+},{"./visitor":14}],14:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -3593,7 +3509,7 @@ exports['default'] = Visitor;
 module.exports = exports['default'];
 
 
-},{"../exception":19}],16:[function(require,module,exports){
+},{"../exception":18}],15:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -3816,7 +3732,7 @@ exports['default'] = WhitespaceControl;
 module.exports = exports['default'];
 
 
-},{"./visitor":15}],17:[function(require,module,exports){
+},{"./visitor":14}],16:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -3834,7 +3750,7 @@ function registerDefaultDecorators(instance) {
 }
 
 
-},{"./decorators/inline":18}],18:[function(require,module,exports){
+},{"./decorators/inline":17}],17:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -3865,7 +3781,7 @@ exports['default'] = function (instance) {
 module.exports = exports['default'];
 
 
-},{"../utils":32}],19:[function(require,module,exports){
+},{"../utils":31}],18:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -3921,7 +3837,7 @@ exports['default'] = Exception;
 module.exports = exports['default'];
 
 
-},{}],20:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -3969,7 +3885,7 @@ function registerDefaultHelpers(instance) {
 }
 
 
-},{"./helpers/block-helper-missing":21,"./helpers/each":22,"./helpers/helper-missing":23,"./helpers/if":24,"./helpers/log":25,"./helpers/lookup":26,"./helpers/with":27}],21:[function(require,module,exports){
+},{"./helpers/block-helper-missing":20,"./helpers/each":21,"./helpers/helper-missing":22,"./helpers/if":23,"./helpers/log":24,"./helpers/lookup":25,"./helpers/with":26}],20:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -4010,7 +3926,7 @@ exports['default'] = function (instance) {
 module.exports = exports['default'];
 
 
-},{"../utils":32}],22:[function(require,module,exports){
+},{"../utils":31}],21:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -4106,7 +4022,7 @@ exports['default'] = function (instance) {
 module.exports = exports['default'];
 
 
-},{"../exception":19,"../utils":32}],23:[function(require,module,exports){
+},{"../exception":18,"../utils":31}],22:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -4133,7 +4049,7 @@ exports['default'] = function (instance) {
 module.exports = exports['default'];
 
 
-},{"../exception":19}],24:[function(require,module,exports){
+},{"../exception":18}],23:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -4164,7 +4080,7 @@ exports['default'] = function (instance) {
 module.exports = exports['default'];
 
 
-},{"../utils":32}],25:[function(require,module,exports){
+},{"../utils":31}],24:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -4192,7 +4108,7 @@ exports['default'] = function (instance) {
 module.exports = exports['default'];
 
 
-},{}],26:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -4212,7 +4128,7 @@ exports['default'] = function (instance) {
 module.exports = exports['default'];
 
 
-},{}],27:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -4247,7 +4163,7 @@ exports['default'] = function (instance) {
 module.exports = exports['default'];
 
 
-},{"../utils":32}],28:[function(require,module,exports){
+},{"../utils":31}],27:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -4296,7 +4212,7 @@ exports['default'] = logger;
 module.exports = exports['default'];
 
 
-},{"./utils":32}],29:[function(require,module,exports){
+},{"./utils":31}],28:[function(require,module,exports){
 (function (global){
 /* global window */
 'use strict';
@@ -4320,7 +4236,7 @@ module.exports = exports['default'];
 
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],30:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -4629,7 +4545,7 @@ function executeDecorators(fn, prog, container, depths, data, blockParams) {
 }
 
 
-},{"./base":6,"./exception":19,"./utils":32}],31:[function(require,module,exports){
+},{"./base":5,"./exception":18,"./utils":31}],30:[function(require,module,exports){
 // Build out our basic SafeString type
 'use strict';
 
@@ -4646,7 +4562,7 @@ exports['default'] = SafeString;
 module.exports = exports['default'];
 
 
-},{}],32:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -4772,7 +4688,7 @@ function appendContextPath(contextPath, id) {
 }
 
 
-},{}],33:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 // USAGE:
 // var handlebars = require('handlebars');
 /* eslint-disable no-var */
@@ -4799,7 +4715,7 @@ if (typeof require !== 'undefined' && require.extensions) {
   require.extensions['.hbs'] = extension;
 }
 
-},{"../dist/cjs/handlebars":4,"../dist/cjs/handlebars/compiler/printer":14,"fs":2}],34:[function(require,module,exports){
+},{"../dist/cjs/handlebars":3,"../dist/cjs/handlebars/compiler/printer":13,"fs":1}],33:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.2.4
  * http://jquery.com/
@@ -14615,7 +14531,7 @@ if ( !noGlobal ) {
 return jQuery;
 }));
 
-},{}],35:[function(require,module,exports){
+},{}],34:[function(require,module,exports){
 /*
      _ _      _       _
  ___| (_) ___| | __  (_)___
@@ -17628,7 +17544,7 @@ return jQuery;
 
 }));
 
-},{"jquery":34}],36:[function(require,module,exports){
+},{"jquery":33}],35:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -17751,7 +17667,7 @@ ArraySet.prototype.toArray = function ArraySet_toArray() {
 
 exports.ArraySet = ArraySet;
 
-},{"./util":45}],37:[function(require,module,exports){
+},{"./util":44}],36:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -17893,7 +17809,7 @@ exports.decode = function base64VLQ_decode(aStr, aIndex, aOutParam) {
   aOutParam.rest = aIndex;
 };
 
-},{"./base64":38}],38:[function(require,module,exports){
+},{"./base64":37}],37:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -17962,7 +17878,7 @@ exports.decode = function (charCode) {
   return -1;
 };
 
-},{}],39:[function(require,module,exports){
+},{}],38:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -18075,7 +17991,7 @@ exports.search = function search(aNeedle, aHaystack, aCompare, aBias) {
   return index;
 };
 
-},{}],40:[function(require,module,exports){
+},{}],39:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2014 Mozilla Foundation and contributors
@@ -18156,7 +18072,7 @@ MappingList.prototype.toArray = function MappingList_toArray() {
 
 exports.MappingList = MappingList;
 
-},{"./util":45}],41:[function(require,module,exports){
+},{"./util":44}],40:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -18272,7 +18188,7 @@ exports.quickSort = function (ary, comparator) {
   doQuickSort(ary, comparator, 0, ary.length - 1);
 };
 
-},{}],42:[function(require,module,exports){
+},{}],41:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -19419,7 +19335,7 @@ IndexedSourceMapConsumer.prototype._parseMappings =
 
 exports.IndexedSourceMapConsumer = IndexedSourceMapConsumer;
 
-},{"./array-set":36,"./base64-vlq":37,"./binary-search":39,"./quick-sort":41,"./util":45}],43:[function(require,module,exports){
+},{"./array-set":35,"./base64-vlq":36,"./binary-search":38,"./quick-sort":40,"./util":44}],42:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -19846,7 +19762,7 @@ SourceMapGenerator.prototype.toString =
 
 exports.SourceMapGenerator = SourceMapGenerator;
 
-},{"./array-set":36,"./base64-vlq":37,"./mapping-list":40,"./util":45}],44:[function(require,module,exports){
+},{"./array-set":35,"./base64-vlq":36,"./mapping-list":39,"./util":44}],43:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -20261,7 +20177,7 @@ SourceNode.prototype.toStringWithSourceMap = function SourceNode_toStringWithSou
 
 exports.SourceNode = SourceNode;
 
-},{"./source-map-generator":43,"./util":45}],45:[function(require,module,exports){
+},{"./source-map-generator":42,"./util":44}],44:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -20751,7 +20667,7 @@ function computeSourceURL(sourceRoot, sourceURL, sourceMapURL) {
 }
 exports.computeSourceURL = computeSourceURL;
 
-},{}],46:[function(require,module,exports){
+},{}],45:[function(require,module,exports){
 /*
  * Copyright 2009-2011 Mozilla Foundation and contributors
  * Licensed under the New BSD license. See LICENSE.txt or:
@@ -20761,12 +20677,12 @@ exports.SourceMapGenerator = require('./lib/source-map-generator').SourceMapGene
 exports.SourceMapConsumer = require('./lib/source-map-consumer').SourceMapConsumer;
 exports.SourceNode = require('./lib/source-node').SourceNode;
 
-},{"./lib/source-map-consumer":42,"./lib/source-map-generator":43,"./lib/source-node":44}],47:[function(require,module,exports){
+},{"./lib/source-map-consumer":41,"./lib/source-map-generator":42,"./lib/source-node":43}],46:[function(require,module,exports){
 var $ = require('jquery'),
     Projects = require('./projects.js'),
     Handlebars = require('handlebars'),
     Fuse = require('fuse.js'),
-    ClickOrTouch = require('@avvio-reply/clickortouch'),
+    ClickOrTouch = require('./clickOrTouch'),
     Slick = require('slick-carousel');
 
 $(document).ready(function() {
@@ -20935,8 +20851,109 @@ $(document).ready(function() {
         closePopup();
     });
 });
-},{"./projects.js":48,"@avvio-reply/clickortouch":1,"fuse.js":3,"handlebars":33,"jquery":34,"slick-carousel":35}],48:[function(require,module,exports){
+},{"./clickOrTouch":47,"./projects.js":48,"fuse.js":2,"handlebars":32,"jquery":33,"slick-carousel":34}],47:[function(require,module,exports){
+'use strict';
+
+var $ = require('jquery')
+    , events = 'click touchmove touchend'
+    , touchmove = 'touchmove'
+    , touchend = 'touchend'
+    , click = 'click';
+
+var ClickOrTouch = function(selector, useLock, onEvent, acceptGesturesAsClick){
+
+	if (typeof acceptGesturesAsClick != 'boolean')
+		acceptGesturesAsClick = false;
+
+    var self = this
+
+        , handler = function(e){
+            e.preventDefault();
+
+            self.$target = $(e.currentTarget);
+			
+            /* ignore click/touch on scroll event */
+            if (e.type == touchmove && !acceptGesturesAsClick){
+                self.cancel = true;
+                return true;
+            } else if (e.type == touchend && self.cancel){
+                self.cancel = false;
+                return true;
+            }
+
+            /* locking prevents subsequent interaction being processed */
+            if (useLock){
+                if (self.lock)
+                    return;
+                self.lock = true;
+            }
+
+            /* ios tablet/phone will raise back-to-back touch and click events.
+                ensure the second event is ignored. */
+            var thisLast = self.last;
+            self.last = e.type;
+            if (thisLast == touchend && e.type == click ||
+				thisLast == click && e.type == touchend){
+					
+				/* clear sequence tracking */
+				self.last = null;
+
+				return;
+			}
+			
+			/* evaluate the core handler only on isolated click/touchend */
+			onEvent.call(self, e);
+        };
+
+    if (useLock)
+        self.lock = false;
+
+    self.cancel = false;
+    self.last = null;
+
+    self.unbind = function(){
+        $(document).off(events, selector, handler);
+        return self;
+    };
+
+    $(document).on(events, selector, handler);
+};
+
+/** default behaviour is to unlock the event, but locking is optional via trueOrFalse */
+ClickOrTouch.prototype.unlock = function(trueOrFalse){
+    this.lock = (typeof trueOrFalse == 'boolean' ? !trueOrFalse : false);
+    return this;
+};
+
+
+
+module.exports = ClickOrTouch;
+},{"jquery":33}],48:[function(require,module,exports){
 module.exports = exports = [
+	{
+		id: 8,
+		client: "Personal Projects",
+		name: "Portfolio",
+		description: "My portfolio, made using GatsbyJS",
+		tags: ["ReactJS", "GatsbyJS", "JavaScript", "Styled Components"],
+		notes: [],
+		contentFolder: "portfolio",
+		noImages: 1,
+		playableLink: "https://www.ryandixonportfolio.com/",
+		githubLink: "https://github.com/ryandixon555/personal-website-V3"
+	},
+	{
+		id: 7,
+		client: "Personal Projects",
+		name: "Exercise Tracker",
+		description: "An app showing an exercise tracker using the MERN stack",
+		tags: ["ReactJS", "MERN", "JavaScript", "API", "Bootstrap", "MongoDB", "React Router", "AxiosJS"],
+		notes: [],
+		contentFolder: "react exercise tracker",
+		noImages: 1,
+		playableLink: "https://5e49823334f94f567773d0db--frosty-goldwasser-5ce2b8.netlify.com/",
+		githubLink: "https://github.com/ryandixon555/react-full-stack-exercise-tracker"
+	},
 	{
 		id: 6,
 		client: "Personal Projects",
@@ -21010,4 +21027,4 @@ module.exports = exports = [
 		githubLink: "https://github.com/ryandixon555/avvio-wheel-of-fortune"
 	}
 ];
-},{}]},{},[47]);
+},{}]},{},[46]);

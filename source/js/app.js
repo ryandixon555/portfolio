@@ -2,7 +2,7 @@ var $ = require('jquery'),
     Projects = require('./projects.js'),
     Handlebars = require('handlebars'),
     Fuse = require('fuse.js'),
-    ClickOrTouch = require('@avvio-reply/clickortouch'),
+    ClickOrTouch = require('./clickOrTouch'),
     Slick = require('slick-carousel');
 
 $(document).ready(function() {
