@@ -1,5 +1,29 @@
 module.exports = exports = [
 	{
+		id: 8,
+		client: "Personal Projects",
+		name: "Portfolio",
+		description: "My portfolio, made using GatsbyJS",
+		tags: ["ReactJS", "GatsbyJS", "JavaScript", "Styled Components"],
+		notes: [],
+		contentFolder: "portfolio",
+		noImages: 1,
+		playableLink: "https://www.ryandixonportfolio.com/",
+		githubLink: "https://github.com/ryandixon555/personal-website-V3"
+	},
+	{
+		id: 7,
+		client: "Personal Projects",
+		name: "Exercise Tracker",
+		description: "An app showing an exercise tracker using the MERN stack",
+		tags: ["ReactJS", "MERN", "JavaScript", "API", "Bootstrap", "MongoDB", "React Router", "AxiosJS"],
+		notes: [],
+		contentFolder: "react exercise tracker",
+		noImages: 1,
+		playableLink: "https://5e49823334f94f567773d0db--frosty-goldwasser-5ce2b8.netlify.com/",
+		githubLink: "https://github.com/ryandixon555/react-full-stack-exercise-tracker"
+	},
+	{
 		id: 6,
 		client: "Personal Projects",
 		name: "Recipe App",
