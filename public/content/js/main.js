@@ -20692,6 +20692,7 @@ $(document).ready(function() {
         "project":Handlebars.compile($('#project').html())
     };
 
+    
     renderPage();
 
     if (window.history && window.history.pushState) {
