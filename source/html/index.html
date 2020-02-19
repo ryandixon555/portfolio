@@ -32,10 +32,17 @@
 <script type="text/template" id="projectTile">
 	<li class="project" data-id="{{id}}">
 		<a href="#{{id}}">
-			<div class="project__cover" style="background-image: url('content/images/projects/{{contentFolder}}/cover.jpg')"></div>
 			<div class="project__description">
-				<h4>{{projectName}}</h4>
-				<img class="client-logo" src="content/images/clients/{{client}}.png" />
+				<h4>Project Name: {{projectName}}</h4>
+				<h2>Client: {{client}}</h2>
+			</div>
+			<div class="project__description">
+				<h4>Tags:</h4>
+				<ul>
+					{{#each tags}}
+						<span>{{this}}, </span>
+					{{/each}}
+				<ul>
 			</div>
 		</a>
 	</li>
@@ -48,13 +55,6 @@
 				<h3>Client: {{client}}</h3>
 				<h1>{{projectName}}</h1>
 			</div>
-			<!-- <div class="project-detail__images">
-				{{#each images}}
-					<li>
-						<img src="content/images/projects/{{../contentFolder}}/{{this}}">
-					</li>
-				{{/each}}
-			</div> -->
 			<div class="project-detail__images-nav"></div>
 			<div class="project-detail__info-container">
 				<div class="project-detail__info-column">
@@ -62,16 +62,6 @@
 						<h2>Overview:</h2>
 						<p>{{description}}</p>
 					</div>
-					<!-- <div class="project-detail__notes">
-						<h2>Notes:</h2>
-						<ul>
-							{{#each notes}}
-								<li>
-									<span>{{this}}</span>
-								</li>
-							{{/each}}
-						</ul>
-					</div> -->
 				</div>
 				<div class="project-detail__info-column">
 					<div class="project-detail__breakdown">

@@ -283,7 +283,8 @@ a:hover {
   -webkit-align-self: flex-start;
       -ms-flex-item-align: start;
           align-self: flex-start;
-  cursor: pointer; }
+  cursor: pointer;
+  min-height: 200px; }
   @media screen and (min-width: 568px) {
     .project {
       width: 48%; } }
@@ -306,6 +307,13 @@ a:hover {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
   -webkit-align-items: center;
      -moz-box-align: center;
@@ -316,10 +324,11 @@ a:hover {
      -moz-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 5px 10px; }
+  padding: 5px 10px;
+  text-align: center; }
 
 .project__description h4 {
-  margin-right: 10px;
+  padding: 10px;
   font-size: 14px;
   line-height: 120%;
   font-family: "Proximanova-Extra-Bold", "Helvetica", "Arial", "Sans-Serif";

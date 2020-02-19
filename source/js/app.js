@@ -2,8 +2,7 @@ var $ = require('jquery'),
     Projects = require('./projects.js'),
     Handlebars = require('handlebars'),
     Fuse = require('fuse.js'),
-    ClickOrTouch = require('./clickOrTouch'),
-    Slick = require('slick-carousel');
+    ClickOrTouch = require('./clickOrTouch')
 
 $(document).ready(function() {
 
@@ -12,7 +11,6 @@ $(document).ready(function() {
         "project":Handlebars.compile($('#project').html())
     };
 
-    
     renderPage();
 
     if (window.history && window.history.pushState) {
@@ -30,7 +28,6 @@ $(document).ready(function() {
           }
         });
 
-        // window.history.pushState('forward', null, '/showcase/');
         window.history.pushState('forward', null, '/');
     }
 
@@ -115,20 +112,6 @@ $(document).ready(function() {
         $('body')
             .append(templates.project(model))
             .addClass('scroll-lock');
-
-        // setTimeout(function(){
-        //     $('.project-detail__images').slick({
-        //         dots: true,
-        //         dotsClass: 'project-images__dots',
-        //         prevArrow: '<i class="fas fa-chevron-left slick-prev"></i>',
-        //         nextArrow: '<i class="fas fa-chevron-right slick-next"></i>',
-        //         infinite: true,
-        //         speed: 500,
-        //         fade: true,
-        //         cssEase: 'linear',
-        //         adaptiveHeight: true
-        //     });
-        // }, 100);
     }
 
     $(window).on('hashchange', function() {
