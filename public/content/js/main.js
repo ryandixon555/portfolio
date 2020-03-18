@@ -17902,6 +17902,16 @@ module.exports = ClickOrTouch;
 },{"jquery":44}],47:[function(require,module,exports){
 module.exports = exports = [
 	{
+		id: 11,
+		client: "Personal Projects",
+		name: "React Hooks - Budget Calculator",
+		description: "A budget calculator using React Hooks",
+		tags: ["ReactJS", "Hooks", "JavaScript", "React Hooks"],
+		notes: [],
+		playableLink: "https://budget-react-hooks.netlify.com/",
+		githubLink: "https://github.com/ryandixon555/react-hooks-budget-calculator"
+	},
+	{
 		id: 10,
 		client: "Personal Projects",
 		name: "Flappy Bird",
