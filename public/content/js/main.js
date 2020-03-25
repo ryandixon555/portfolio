@@ -17707,8 +17707,8 @@ $(document).ready(function() {
 
             var model = {
                 "id":project.id,
-                "contentFolder":project.contentFolder,
                 "projectName":project.name,
+                "description": project.description,
                 "tags":project.tags,
                 "client":project.client.replace(/[\. ,':-]+/g, "")
             }
@@ -17765,8 +17765,6 @@ $(document).ready(function() {
 
         var model = {
             "id":project.id,
-            "contentFolder":project.contentFolder,
-            "images":projectImages,
             "projectName":project.name,
             "client":project.client,
             "description":project.description,
@@ -17902,6 +17900,16 @@ module.exports = ClickOrTouch;
 },{"jquery":44}],47:[function(require,module,exports){
 module.exports = exports = [
 	{
+		id: 12,
+		client: "Personal Projects",
+		name: "React Board Game",
+		description: "A local 2 player board game made using ReactJS",
+		tags: ["ReactJS"],
+		notes: [],
+		playableLink: "https://react-board-game-2.netlify.com/",
+		githubLink: "https://github.com/ryandixon555/create-react-app-board-game-2"
+	},
+	{
 		id: 11,
 		client: "Personal Projects",
 		name: "React Hooks - Budget Calculator",
@@ -17946,7 +17954,7 @@ module.exports = exports = [
 		client: "Personal Projects",
 		name: "Exercise Tracker",
 		description: "An app showing an exercise tracker using the MERN stack",
-		tags: ["ReactJS", "MERN", "JavaScript", "API", "Bootstrap", "MongoDB", "React Router", "AxiosJS"],
+		tags: ["ReactJS", "MERN", "JavaScript", "API", "Bootstrap", "MongoDB", "React Router", "AxiosJS", "Full Stack"],
 		notes: [],
 		playableLink: "https://5e49823334f94f567773d0db--frosty-goldwasser-5ce2b8.netlify.com/",
 		githubLink: "https://github.com/ryandixon555/react-full-stack-exercise-tracker"

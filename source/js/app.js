@@ -40,8 +40,8 @@ $(document).ready(function() {
 
             var model = {
                 "id":project.id,
-                "contentFolder":project.contentFolder,
                 "projectName":project.name,
+                "description": project.description,
                 "tags":project.tags,
                 "client":project.client.replace(/[\. ,':-]+/g, "")
             }
@@ -98,8 +98,6 @@ $(document).ready(function() {
 
         var model = {
             "id":project.id,
-            "contentFolder":project.contentFolder,
-            "images":projectImages,
             "projectName":project.name,
             "client":project.client,
             "description":project.description,

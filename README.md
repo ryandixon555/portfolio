@@ -1,4 +1,4 @@
-## Welcome to Ryan Dixon's portolio
+## Welcome to Ryan Dixon's portfolio
 
 To Run:
 - npm i
