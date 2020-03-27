@@ -1,5 +1,15 @@
 module.exports = exports = [
 	{
+		id: 13,
+		client: "Avvio",
+		name: "Matching Game",
+		description: "A drag and drop game where you have to match the clues with the story",
+		tags: ["VanillaJS","JQuery","SASS","Game", "Avvio", "Avvio Reply"],
+		notes: [],
+		playableLink: "https://ryandixon555.github.io/avvio-matching-game/public/index.html",
+		githubLink: "https://github.com/ryandixon555/avvio-matching-game"
+	},
+	{
 		id: 12,
 		client: "Personal Projects",
 		name: "React Board Game",
@@ -34,7 +44,7 @@ module.exports = exports = [
 		client: "Avvio",
 		name: "Racing Game",
 		description: "A game where you have to raqce against the computer",
-		tags: ["Game", "Avvio", "Avvio Reply", "Vanilla JS"],
+		tags: ["Game", "Avvio", "Avvio Reply", "Vanilla JS","SASS"],
 		notes: [],
 		playableLink: "https://ryandixon555.github.io/avvio-racing/public/index.html",
 		githubLink: "https://github.com/ryandixon555/avvio-racing"
@@ -84,7 +94,7 @@ module.exports = exports = [
 		client: "Avvio",
 		name: "Wordsearch Game",
 		description: "A wordsearch game",
-		tags: ["Wordsearch", "Game", "Avvio", "Avvio Reply", "Handlebars", "Popups", "Vanilla JS"],
+		tags: ["Wordsearch", ,"SASS", "Game", "Avvio", "Avvio Reply", "Handlebars", "Popups", "Vanilla JS"],
 		notes: [],
 		playableLink: "https://ryandixon555.github.io/avvio-wordsearch/public/index.html",
 		githubLink: "https://github.com/ryandixon555/avvio-wordsearch/tree/master"
@@ -94,7 +104,7 @@ module.exports = exports = [
 		client: "Avvio",
 		name: "Christmas Movie Challenge",
 		description: "A quiz game where you have to guess the movies title by the image.",
-		tags: ["Quiz","Game", "Avvio", "Avvio Reply", "Vanilla JS"],
+		tags: ["Quiz","Game", "Avvio", "Avvio Reply", "Vanilla JS", ,"SASS"],
 		notes: [],
 		playableLink: "https://ryandixon555.github.io/avvio-guess-the-movie/public/index.html",
 		githubLink: "https://github.com/ryandixon555/avvio-guess-the-movie"
@@ -104,7 +114,7 @@ module.exports = exports = [
 		client: "Avvio",
 		name: "Superhero Name Generator",
 		description: "A very simple superhero name generator.",
-		tags: ["Generator","Game", "Avvio", "Avvio Reply", "Vanilla JS", "Popups"],
+		tags: ["Generator","Game", "SASS", "Avvio", "Avvio Reply", "Vanilla JS", "Popups"],
 		notes: [],
 		playableLink: "https://ryandixon555.github.io/avvio-superhero-name-generator/public/index.html",
 		githubLink: "https://github.com/ryandixon555/avvio-superhero-name-generator/tree/master"
@@ -114,7 +124,7 @@ module.exports = exports = [
 		client: "Avvio",
 		name: "Wheel of Fortune",
 		description: "A Wheel of Fortune game. 3 spins to earn as many points as possible to win prizes.",
-		tags: ["Game", "Avvio", "Avvio Reply", "Gambling", "Vanilla JS"],
+		tags: ["Game", "Avvio","SASS", "Avvio Reply", "Gambling", "Vanilla JS"],
 		notes: [],
 		playableLink: "https://ryandixon555.github.io/avvio-wheel-of-fortune/public/index.html",
 		githubLink: "https://github.com/ryandixon555/avvio-wheel-of-fortune"
