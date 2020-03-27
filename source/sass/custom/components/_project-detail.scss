@@ -113,12 +113,20 @@
 }
 
 .project-detail__info-column:first-child {
+	@include breakpoint-under(md) {
+		width: 100%;
+	}
+
 	width: 70%;
 	margin-top: 0;
 	margin-right: 60px;
 }
 
 .project-detail__info-column:last-child {
+	@include breakpoint-under(md) {
+		width: 100%;
+	}
+	
 	width: 50%;
 }
 

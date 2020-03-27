@@ -4904,9 +4904,15 @@ a:hover {
   width: 70%;
   margin-top: 0;
   margin-right: 60px; }
+  @media screen and (max-width: 768px) {
+    .project-detail__info-column:first-child {
+      width: 100%; } }
 
 .project-detail__info-column:last-child {
   width: 50%; }
+  @media screen and (max-width: 768px) {
+    .project-detail__info-column:last-child {
+      width: 100%; } }
 
 .project-detail__info-column h2 {
   font-size: 18px;
