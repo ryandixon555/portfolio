@@ -17819,6 +17819,14 @@ $(document).ready(function() {
     new ClickOrTouch('.project-detail__close', false, function(e){
         closePopup();
     });
+
+    // Prevent enter key from submitting
+    $(document).keypress(
+        function(event){
+          if (event.which == '13') {
+            event.preventDefault();
+          }
+      });
 });
 },{"./clickOrTouch":46,"./projects.js":47,"fuse.js":2,"handlebars":32,"jquery":44}],46:[function(require,module,exports){
 'use strict';

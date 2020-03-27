@@ -152,4 +152,12 @@ $(document).ready(function() {
     new ClickOrTouch('.project-detail__close', false, function(e){
         closePopup();
     });
+
+    // Prevent enter key from submitting
+    $(document).keypress(
+        function(event){
+          if (event.which == '13') {
+            event.preventDefault();
+          }
+      });
 });
