@@ -17908,6 +17908,16 @@ module.exports = ClickOrTouch;
 },{"jquery":44}],47:[function(require,module,exports){
 module.exports = exports = [
 	{
+		id: 14,
+		client: "Personal Projects",
+		name: "React Evernote Clone",
+		description: "An evernote clone built using ReactJS and Firebase",
+		tags: ["ReactJS", "JavaScript", "MaterialUI", "Firebase"],
+		notes: [],
+		playableLink: "https://react-evernote-tutorial.netlify.com/",
+		githubLink: "https://github.com/ryandixon555/react-evernote-tutorial"
+	},
+	{
 		id: 13,
 		client: "Avvio",
 		name: "Matching Game",
@@ -17922,7 +17932,7 @@ module.exports = exports = [
 		client: "Personal Projects",
 		name: "React Board Game",
 		description: "A local 2 player board game made using ReactJS",
-		tags: ["ReactJS"],
+		tags: ["ReactJS", "JavaScript"],
 		notes: [],
 		playableLink: "https://react-board-game-2.netlify.com/",
 		githubLink: "https://github.com/ryandixon555/create-react-app-board-game-2"
