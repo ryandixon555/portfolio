@@ -17908,6 +17908,26 @@ module.exports = ClickOrTouch;
 },{"jquery":33}],47:[function(require,module,exports){
 module.exports = exports = [
 	{
+		id: 16,
+		client: "Personal Projects",
+		name: "Bingo",
+		description: "An bingo game that tracks the score",
+		tags: ["ReactJS", "JavaScript", "Firebase", "Full Stack"],
+		notes: [],
+		playableLink: "https://react-bingo.netlify.com/",
+		githubLink: "https://github.com/ryandixon555/bingo"
+	},
+	{
+		id: 15,
+		client: "Personal Projects",
+		name: "Fun Food Friends",
+		description: "An app showing what friends bring to a picnic, using ReactJS and FIrebase",
+		tags: ["ReactJS", "JavaScript", "Firebase", "Full Stack"],
+		notes: [],
+		playableLink: "https://fun-food-friends.netlify.com/",
+		githubLink: "https://github.com/ryandixon555/fun-food-friends"
+	},
+	{
 		id: 14,
 		client: "Personal Projects",
 		name: "React Evernote Clone",
@@ -17951,7 +17971,7 @@ module.exports = exports = [
 		id: 10,
 		client: "Personal Projects",
 		name: "Flappy Bird",
-		description: "A small JS game based on flappy bird",
+		description: "A small JS game based on Flappy Bird",
 		tags: ["Game", "Vanilla JS"],
 		notes: [],
 		playableLink: "https://ryandixon555.github.io/flappy-bird/",
@@ -17961,7 +17981,7 @@ module.exports = exports = [
 		id: 9,
 		client: "Avvio",
 		name: "Racing Game",
-		description: "A game where you have to raqce against the computer",
+		description: "A game where you have to race against the computer",
 		tags: ["Game", "Avvio", "Avvio Reply", "Vanilla JS","SASS"],
 		notes: [],
 		playableLink: "https://ryandixon555.github.io/avvio-racing/public/index.html",

@@ -1,5 +1,25 @@
 module.exports = exports = [
 	{
+		id: 16,
+		client: "Personal Projects",
+		name: "Bingo",
+		description: "An bingo game that tracks the score",
+		tags: ["ReactJS", "JavaScript", "Firebase", "Full Stack"],
+		notes: [],
+		playableLink: "https://react-bingo.netlify.com/",
+		githubLink: "https://github.com/ryandixon555/bingo"
+	},
+	{
+		id: 15,
+		client: "Personal Projects",
+		name: "Fun Food Friends",
+		description: "An app showing what friends bring to a picnic, using ReactJS and FIrebase",
+		tags: ["ReactJS", "JavaScript", "Firebase", "Full Stack"],
+		notes: [],
+		playableLink: "https://fun-food-friends.netlify.com/",
+		githubLink: "https://github.com/ryandixon555/fun-food-friends"
+	},
+	{
 		id: 14,
 		client: "Personal Projects",
 		name: "React Evernote Clone",
