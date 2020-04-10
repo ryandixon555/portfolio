@@ -17908,6 +17908,16 @@ module.exports = ClickOrTouch;
 },{"jquery":33}],47:[function(require,module,exports){
 module.exports = exports = [
 	{
+		id: 17,
+		client: "Personal Projects",
+		name: "Pokedex",
+		description: "A Pokedex made using ReactJS",
+		tags: ["ReactJS", "JavaScript", "API"],
+		notes: [],
+		playableLink: "https://pokedex-reactjs.netlify.com/#/",
+		githubLink: "https://github.com/ryandixon555/react-pokedex"
+	},
+	{
 		id: 16,
 		client: "Personal Projects",
 		name: "Bingo",
