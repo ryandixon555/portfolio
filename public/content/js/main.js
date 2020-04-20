@@ -17710,7 +17710,7 @@ $(document).ready(function() {
                 "projectName":project.name,
                 "description": project.description,
                 "tags":project.tags,
-                "client":project.client.replace(/[\. ,':-]+/g, "")
+                "client":project.client
             }
 
             $('.projects').append(templates.projectTile(model));
@@ -17908,6 +17908,16 @@ module.exports = ClickOrTouch;
 },{"jquery":33}],47:[function(require,module,exports){
 module.exports = exports = [
 	{
+		id: 18,
+		client: "Personal Projects",
+		name: "ReactJS Shopping Cart",
+		description: "A shopping cart application made using ReactJS",
+		tags: ["ReactJS", "JavaScript", "NodeJS", "Redux"],
+		notes: [],
+		playableLink: "https://react-shopping-site.netlify.app/",
+		githubLink: "https://github.com/ryandixon555/react-ecommerce"
+	},
+	{
 		id: 17,
 		client: "Personal Projects",
 		name: "Pokedex",
@@ -17921,7 +17931,7 @@ module.exports = exports = [
 		id: 16,
 		client: "Personal Projects",
 		name: "Bingo",
-		description: "An bingo game that tracks the score",
+		description: "A bingo game that tracks the score. Connects to a Firebase DB.",
 		tags: ["ReactJS", "JavaScript", "Firebase", "Full Stack"],
 		notes: [],
 		playableLink: "https://react-bingo.netlify.com/",
@@ -17931,7 +17941,7 @@ module.exports = exports = [
 		id: 15,
 		client: "Personal Projects",
 		name: "Fun Food Friends",
-		description: "An app showing what friends bring to a picnic, using ReactJS and FIrebase",
+		description: "An app showing what friends bring to a picnic, using ReactJS and a Firebase DB",
 		tags: ["ReactJS", "JavaScript", "Firebase", "Full Stack"],
 		notes: [],
 		playableLink: "https://fun-food-friends.netlify.com/",

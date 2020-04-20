@@ -43,7 +43,7 @@ $(document).ready(function() {
                 "projectName":project.name,
                 "description": project.description,
                 "tags":project.tags,
-                "client":project.client.replace(/[\. ,':-]+/g, "")
+                "client":project.client
             }
 
             $('.projects').append(templates.projectTile(model));
