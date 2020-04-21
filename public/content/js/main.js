@@ -18010,15 +18010,6 @@ module.exports = exports = [
 	{
 		id: 2,
 		client: "Personal Projects",
-		name: "Recipe App",
-		description: "An app showing you recipes. Made using ReactJS where is connects to an API. Also includes filtering.",
-		tags: ["ReactJS", "Filtering", "JavaScript", "API"],
-		notes: [],
-		playableLink: "https://react-js-recipe.netlify.com/",
-		githubLink: "https://github.com/ryandixon555/"
-	},
-	{
-		id: 1,
 		client: "Personal Projects",
 		name: "To Do List",
 		description: "A To Do list made using ReactJS",
@@ -18026,6 +18017,15 @@ module.exports = exports = [
 		notes: [],
 		playableLink: "https://react-js-to-do.netlify.com/",
 		githubLink: "https://github.com/ryandixon555/react-todo-app"
+	},
+	{
+		id: 1,
+		name: "Recipe App",
+		description: "An app showing you recipes. Made using ReactJS where is connects to an API. Also includes filtering.",
+		tags: ["ReactJS", "Filtering", "JavaScript", "API"],
+		notes: [],
+		playableLink: "https://react-js-recipe.netlify.com/",
+		githubLink: "https://github.com/ryandixon555/"
 	}
 ];
 },{}]},{},[45]);
