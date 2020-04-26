@@ -1,6 +1,16 @@
 module.exports = exports = [
 	{
-		id: 12,
+		id: 14,
+		client: "Personal Projects",
+		name: "ReactJS Weather App",
+		description: "A weather app built using ReactJS",
+		tags: ["ReactJS", "JavaScript", "Hooks", "API"],
+		notes: [],
+		playableLink: "https://react-weather-app.netlify.app/",
+		githubLink: "https://github.com/ryandixon555/react-weather-app"
+	},
+	{
+		id: 13,
 		client: "Personal Projects",
 		name: "ReactJS Quiz",
 		description: "A quiz built using ReactJS",
