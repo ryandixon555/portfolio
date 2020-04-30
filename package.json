@@ -34,7 +34,7 @@
     "acorn-dynamic-import": "^4.0.0",
     "fuse.js": "^3.4.5",
     "isotope-layout": "^3.0.6",
-    "jquery": "^2.2.4",
+    "jquery": "^3.5.0",
     "node-sass": "^4.13.1",
     "require-globify": "^1.4.1",
     "slick-carousel": "^1.8.1"
